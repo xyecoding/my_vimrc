@@ -18,9 +18,9 @@ imap   <C-A>   <ESC>:q<CR>
 nmap    <C-A>   :q<CR>
 
 autocmd BufNewFile,BufRead *.tex,*.md  set spell
-hi SpellBad cterm=None ctermbg=gray ctermfg=black
 
 "colorscheme desert
 set whichwrap=<,>,[,]
 colorscheme desert
+hi SpellBad cterm=None ctermbg=gray ctermfg=black
 
