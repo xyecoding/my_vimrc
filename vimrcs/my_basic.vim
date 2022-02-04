@@ -4,9 +4,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nu
 set cursorline 
-if empty(v:servername) && exists('*remote_startserver')
-      call remote_startserver('VIM')
-endif
+"if empty(v:servername) && exists('*remote_startserver')
+"      call remote_startserver('VIM')
+"endif
 
 imap   <C-S>   <ESC>:w<CR>
 nmap    <C-S>   :w<CR>
@@ -21,6 +21,8 @@ autocmd BufNewFile,BufRead *.tex,*.md  set spell
 
 "colorscheme desert
 set whichwrap=<,>,[,]
+"highlight SpellBad cterm=None ctermbg=gray ctermfg=black
 colorscheme desert
-hi SpellBad cterm=None ctermbg=gray ctermfg=black
+"highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
+highlight SpellBad ctermfg=009 ctermbg=012 guifg=black guibg=lightgray gui=None
 

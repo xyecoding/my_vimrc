@@ -1,8 +1,9 @@
 snippet sali "align env" A
 	\\begin{align}
-		     ${1}&= \\\\
-		\\label{eq:}
+		     ${1}&=${2} \\\\
+		\\label{eq:${3}}
 	\\end{align}
+${0}
 endsnippet
 	
 snippet sfig "figure env" A
@@ -13,5 +14,5 @@ snippet sfig "figure env" A
 	\\caption{${3}}
 	\\label{fig:${4}}
 	\\end{figure}
-	${0}
+${0}
 endsnippet

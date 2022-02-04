@@ -76,11 +76,11 @@ let g:mkdp_preview_options = {
 
 " use a custom markdown style must be absolute path
 " like '/Users/username/markdown.css' or expand('~/markdown.css')
-let g:mkdp_markdown_css = expand('~/.vim_runtime/my_plugins/markdown-preview.nvim/latex.css')
+let g:mkdp_markdown_css = expand('~/.vim_runtime/vimrcs/latex.cs')
 
 " use a custom highlight style must absolute path
 " like '/Users/username/highlight.css' or expand('~/highlight.css')
-let g:mkdp_highlight_css = expand('~/.vim_runtime/my_plugins/markdown-preview.nvim/latex.css')
+"let g:mkdp_highlight_css = expand('~/.vim_runtime/my_plugins/markdown-preview.nvim/latex.css')
 
 " use a custom port to start server or random for empty
 let g:mkdp_port = ''
@@ -93,6 +93,10 @@ let g:mkdp_page_title = '${name}'
 " recognized filetypes
 " these filetypes will have MarkdownPreview... commands
 let g:mkdp_filetypes = ['markdown']
+
+
+
+
 
 "==============================================================================================
 "vimtex
@@ -143,21 +147,23 @@ let g:vimtex_quickfix_mode = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
+let g:coc_global_extensions=['coc-vimtex','coc-vimlsp', 'coc-json','coc-highlight', 'coc-pyright', 'coc-spell-checker', 'coc-sh','coc-markdownlint','coc-markdown-preview-enhanced','coc-css', 'coc-syntax']
+" coc-ltex, coc-syntax
 set encoding=utf-8
 
 " TextEdit might fail if hidden is not set.
 set hidden
 
 " Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
+"set nobackup
+"set nowritebackup
 
 " Give more space for displaying messages.
 set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -323,6 +329,6 @@ set complete=.
 " snippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:UltiSnipsSnippetDirectories=["UltiSnips","../../vimrcs/my_snippets/"]
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-K>"
+let g:UltiSnipsJumpBackwardTrigger="<C-J>"
 
