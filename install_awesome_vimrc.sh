@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 cd ~/.vim_runtime
@@ -14,9 +14,11 @@ source ~/.vim_runtime/vimrcs/plugins_config.vim
 source ~/.vim_runtime/vimrcs/extended.vim
 source ~/.vim_runtime/vimrcs/vundle.vim
 source ~/.vim_runtime/vimrcs/my_plungins.vim
-colorscheme desert
+source ~/.vim_runtime/vimrcs/my_basic.vim
 ' > ~/.vimrc
 
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pynvim
+echo "stty -ixon" >> ~/.bashrc
 
 echo "Installed the Vim configuration successfully! Enjoy :-)"
 
