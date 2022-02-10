@@ -13,6 +13,7 @@ call vundle#begin('~/.vim_runtime/my_plugins/')
 "Plugin 'git@github.com:ervandew/supertab.git'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'git@github.com:iamcco/markdown-preview.nvim.git' 
+Plugin 'git@github.com:dkarter/bullets.vim.git'
 
 Plugin 'git@github.com:lervag/vimtex.git'
 Plugin 'neoclide/coc.nvim'

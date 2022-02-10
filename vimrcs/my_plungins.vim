@@ -333,3 +333,15 @@ let g:UltiSnipsExpandTrigger="<C-K>"
 let g:UltiSnipsJumpForwardTrigger="<C-K>"
 let g:UltiSnipsJumpBackwardTrigger="<C-J>"
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" bullets.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bullets.vim
+let g:bullets_enabled_file_types = [
+    \ 'markdown',
+    \ 'text',
+    \ 'gitcommit',
+    \ 'scratch'
+    \]
+
+
