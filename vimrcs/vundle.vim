@@ -10,7 +10,7 @@ call vundle#begin('~/.vim_runtime/my_plugins/')
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'git@github.com:ervandew/supertab.git'
+"Plugin 'git@github.com:ervandew/supertab.git'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'git@github.com:iamcco/markdown-preview.nvim.git' 
 

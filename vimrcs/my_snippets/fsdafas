@@ -56,7 +56,8 @@ endglobal
 # Sections and Paragraphs #
 ###########################
 snippet sec "Section" b
-# ${1:Section Name} #
+# ${1:Section Na} #
+
 $0
 endsnippet
 
