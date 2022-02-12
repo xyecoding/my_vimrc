@@ -29,7 +29,7 @@ highlight SpellBad ctermfg=009 ctermbg=012 guifg=black guibg=lightgray gui=None
 hi Pmenu          guifg=#f6f3e8     guibg=#444444     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
 hi PmenuSel       guifg=#000000     guibg=#cae682     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
 hi PmenuSbar        guifg=black       guibg=white       gui=NONE      ctermfg=black       ctermbg=white       cterm=NONE
-
+filetype plugin on
 
 
 

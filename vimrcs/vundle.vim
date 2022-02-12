@@ -14,6 +14,7 @@ call vundle#begin('~/.vim_runtime/my_plugins/')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'git@github.com:iamcco/markdown-preview.nvim.git' 
 Plugin 'git@github.com:dkarter/bullets.vim.git'
+Plugin 'git@github.com:preservim/nerdcommenter.git'
 
 Plugin 'git@github.com:lervag/vimtex.git'
 Plugin 'neoclide/coc.nvim'
