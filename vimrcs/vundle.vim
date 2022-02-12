@@ -16,6 +16,7 @@ Plugin 'git@github.com:iamcco/markdown-preview.nvim.git'
 Plugin 'git@github.com:dkarter/bullets.vim.git'
 Plugin 'git@github.com:preservim/nerdcommenter.git'
 
+"Plugin 'git@github.com:tpope/vim-repeat.git'
 Plugin 'git@github.com:lervag/vimtex.git'
 Plugin 'neoclide/coc.nvim'
 Plugin 'sirver/UltiSnips'
