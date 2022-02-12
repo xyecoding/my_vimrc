@@ -3,7 +3,7 @@
 " wrote by xye
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nu
-set cursorline 
+"set cursorline 
 "if empty(v:servername) && exists('*remote_startserver')
 "      call remote_startserver('VIM')
 "endif
@@ -22,8 +22,8 @@ autocmd BufNewFile,BufRead *.tex,*.md  set spell
 "colorscheme desert
 set whichwrap=<,>,[,]
 
-colorscheme solarized
-"colorscheme delek 
+"colorscheme solarized
+colorscheme delek 
 "highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 highlight SpellBad ctermfg=009 ctermbg=012 guifg=black guibg=lightgray gui=None
 hi Pmenu          guifg=#f6f3e8     guibg=#444444     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
