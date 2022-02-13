@@ -19,13 +19,15 @@ nmap    <C-A>   :q<CR>
 
 autocmd BufNewFile,BufRead *.tex,*.md  set spell
 
+set termguicolors
 "colorscheme desert
 set whichwrap=<,>,[,]
 
 colorscheme solarized
-colorscheme torte
-"colorscheme delek 
+" colorscheme torte
+" colorscheme delek
 "highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
+
 highlight SpellBad ctermfg=009 ctermbg=012 guifg=black guibg=lightgray gui=None
 hi Pmenu          guifg=#f6f3e8     guibg=#444444     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
 hi PmenuSel       guifg=#000000     guibg=#cae682     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
