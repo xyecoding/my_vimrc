@@ -23,6 +23,7 @@ autocmd BufNewFile,BufRead *.tex,*.md  set spell
 set whichwrap=<,>,[,]
 
 colorscheme solarized
+colorscheme torte
 "colorscheme delek 
 "highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 highlight SpellBad ctermfg=009 ctermbg=012 guifg=black guibg=lightgray gui=None
