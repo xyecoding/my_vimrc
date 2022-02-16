@@ -378,12 +378,10 @@ let g:NERDToggleCheckAllLines = 1
 map cc <plug>NERDCommenterComment
 map oo <plug>NERDCommenterUncomment
 
-
-
-
-
-
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"indentLine
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_defaultGroup = 'SpecialKey'
 
 
 
