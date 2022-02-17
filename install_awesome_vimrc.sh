@@ -17,8 +17,10 @@ source ~/.vim_runtime/vimrcs/my_plungins.vim
 source ~/.vim_runtime/vimrcs/my_basic.vim
 ' > ~/.vimrc
 
+
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pynvim  neovim-remote
 echo "stty -ixon" >> ~/.bashrc
+conda install latexindent.pl -c conda-forge
 
 echo "Installed the Vim configuration successfully! Enjoy :-)"
 
