@@ -1,13 +1,23 @@
 #!/bin/bash
 set -e
 
-echo "installing tmux"
+cd ~
+
+echo -e "\033[31m installing node \033[0m"
+wget https://nodejs.org/dist/v17.6.0/node-v17.6.0-linux-x64.tar.xz
+tar xf node-v17.6.0-linux-x64.tar.xz
+mv node-v17.6.0-linux-x64 node
+ln -s ~/node/bin/node /usr/bin/node
+ln -s ~/node/bin/npm /usr/bin/npm
+npm i hexo-cli -g
+
+echo -e "\033[31m installing tmux \033[0m"
 sudo apt install tmux
 
-echo "config tmux"
-cp ~/.vim_runtime/.tmux.conf  ~
+echo -e "\033[31m config tmux \033[0m"
+cp ~/.vim_runtime/.tmux.conf ~
 
-echo "installing miktex"
+echo -e "\033[31m installing miktex \033[0m"
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D6BC243565B2087BC3F897C9277A7293F59E4889
 echo "deb http://miktex.org/download/ubuntu focal universe" | sudo tee /etc/apt/sources.list.d/miktex.list
 sudo apt-get update
@@ -15,11 +25,12 @@ sudo apt-get install miktex
 miktexsetup finish
 initexmf --set-config-value [MPM]AutoInstall=1
 
-echo "installing neovim"
+echo -e "\033[31m installing neovim \033[0m"
+sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt install neovim
 
-echo "pip install pyvim and neovim-remote"
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pynvim  neovim-remote
+echo -e "\033[31m pip install pyvim and neovim-remote \033[0m"
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pynvim neovim-remote
 
 cd ~/.vim_runtime
 
@@ -35,32 +46,32 @@ source ~/.vim_runtime/vimrcs/extended.vim
 source ~/.vim_runtime/vimrcs/vundle.vim
 source ~/.vim_runtime/vimrcs/my_plungins.vim
 source ~/.vim_runtime/vimrcs/my_basic.vim
-' > ~/.vimrc
+' >~/.vimrc
 
 mkdir -p ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
 
+echo -e "\033[31m Disable the stty shortcuts such as ctrl s, for neovim will use them. \033[0m"
+echo "stty -ixon" >>~/.bashrc
 
-
-
-echo "Disable the stty shortcuts such as ctrl s, for neovim will use them."
-echo "stty -ixon" >> ~/.bashrc
-
-echo "installing formate of different type of filse used by vim-autoformat"
+echo -e "\033[31m installing formate of different type of filse used by vim-autoformat \033[0m"
 conda install latexindent.pl -c conda-forge
+sudo apt-get install golang-go
+export GO111MODULE=on
+go env -w GOPROXY=https://goproxy.cn
+go get -u mvdan.cc/sh/cmd/shfmt
+echo "export PATH=\"~/go/bin:\$PATH\"" >>~/.bashrc
 
-echo "installing okular"
+echo -e "\033[31m installing okular \033[0m"
+sudo apt-get install qt5-default qtbase5-dev
+sudo apt install binutils
+sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
 sudo apt install okular
 
-echo "installing recycle bin for linux"
+echo -e "\033[31m installing recycle bin for linux \033[0m"
 sudo apt install trash-cli
-echo "alias vi=nvim" >> ~/.bashrc
-echo "alias vim=nvim" >> ~/.bashrc
-echo "alias rm=trash-put" >> ~/.bashrc
+echo "alias vi=nvim" >>~/.bashrc
+echo "alias vim=nvim" >>~/.bashrc
+echo "alias rm=trash-put" >>~/.bashrc
 
-echo "Installed the Vim configuration successfully! Enjoy :-)"
-echo "For Latex backwordsearch support, you need to add \"nvr --remote-silent +%l %f\" to your okular "
-
-
-
-
+echo -e "\033[31m For Latex backwordsearch support, you need to add \"nvr --remote-silent +%l %f\" to your okular \033[0m"
