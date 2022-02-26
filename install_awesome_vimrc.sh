@@ -7,8 +7,8 @@ echo -e "\033[31m installing node \033[0m"
 wget https://nodejs.org/dist/v17.6.0/node-v17.6.0-linux-x64.tar.xz
 tar xf node-v17.6.0-linux-x64.tar.xz
 mv node-v17.6.0-linux-x64 node
-ln -s ~/node/bin/node /usr/bin/node
-ln -s ~/node/bin/npm /usr/bin/npm
+sudo ln -s ~/node/bin/node /usr/bin/node
+sudo ln -s ~/node/bin/npm /usr/bin/npm
 npm i hexo-cli -g
 
 echo -e "\033[31m installing tmux \033[0m"
@@ -73,6 +73,10 @@ sudo apt install trash-cli
 echo "alias vi=nvim" >>~/.bashrc
 echo "alias vim=nvim" >>~/.bashrc
 echo "alias rm=trash-put" >>~/.bashrc
+
+cd ~
+echo -e "\033[31m clone my blog \033[0m"
+git clone -b hexo git@github.com:xyegithub/myBlog.git
 
 echo -e "\033[31m For Latex backwordsearch support, you need to add \"nvr --remote-silent +%l %f\" to your okular \033[0m"
 echo -e "\033[31m run :PluginInstall in your vim for installing some plugins \033[0m"
