@@ -75,3 +75,4 @@ echo "alias vim=nvim" >>~/.bashrc
 echo "alias rm=trash-put" >>~/.bashrc
 
 echo -e "\033[31m For Latex backwordsearch support, you need to add \"nvr --remote-silent +%l %f\" to your okular \033[0m"
+echo -e "\033[31m run :PluginInstall in your vim for installing some plugins \033[0m"

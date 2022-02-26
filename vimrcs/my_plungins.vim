@@ -390,5 +390,8 @@ au BufWrite * :Autoformat
 let g:formatdef_remark_markdown = '"~/.vim_runtime/vimrcs/auto-format/node_modules/.bin/remark --silent --no-color"'
 let g:formatters_markdown = ['remark_markdown', 'prettier', 'stylelint']
 
+let g:formatdef_shfmt = '"~/go/bin/shfmt -i ".(&expandtab ? shiftwidth() : "0")'
+let g:formatters_sh = ['shfmt']
+
 
 
