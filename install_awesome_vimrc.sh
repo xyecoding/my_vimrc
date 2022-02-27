@@ -4,12 +4,12 @@ set -e
 cd ~
 
 echo -e "\033[31m installing node \033[0m"
-wget https://nodejs.org/dist/v17.6.0/node-v17.6.0-linux-x64.tar.xz
-tar xf node-v17.6.0-linux-x64.tar.xz
-mv node-v17.6.0-linux-x64 node
-sudo ln -s ~/node/bin/node /usr/bin/node
-sudo ln -s ~/node/bin/npm /usr/bin/npm
-npm i hexo-cli -g
+#wget https://nodejs.org/dist/v17.6.0/node-v17.6.0-linux-x64.tar.xz
+#tar xf node-v17.6.0-linux-x64.tar.xz
+#mv node-v17.6.0-linux-x64 node
+#sudo ln -s ~/node/bin/node /usr/bin/node
+#sudo ln -s ~/node/bin/npm /usr/bin/npm
+#npm i hexo-cli -g
 
 echo -e "\033[31m installing tmux \033[0m"
 sudo apt install tmux
