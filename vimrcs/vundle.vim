@@ -12,7 +12,7 @@ call vundle#begin('~/.vim_runtime/my_plugins/')
 " let Vundle manage Vundle, required
 "Plugin 'git@github.com:ervandew/supertab.git'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'git@github.com:iamcco/markdown-preview.nvim.git' 
+Plugin 'git@github.com:iamcco/markdown-preview.nvim.git'
 Plugin 'git@github.com:dkarter/bullets.vim.git'
 Plugin 'git@github.com:preservim/nerdcommenter.git'
 

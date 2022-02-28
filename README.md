@@ -4,14 +4,18 @@ This is my version of vim configuration.
 
 config github
 
+```bash
 git config --global user.name "xyegithub"
 git config --global user.email "xye@bupt.edu.cn"
 ssh-keygen -t rsa -C "xye@bupt.edu.cn"
-cat ~/.ssh/id_rsa.pub
+cat ~/.ssh/id\_rsa.pub
+```
 
+```bash
 ssh -T git@github.com
+git clone git@github.com:xyegithub/my\_vimrc.git ~/.vim\_runtime
+```
 
-git clone git@github.com:xyegithub/my_vimrc.git ~/.vim_runtime
 # Install
 
     git clone --depth=1 https://github.com/xyegithub/my_vimrc.git  ~/.vim_runtime

@@ -4,12 +4,12 @@ set -e
 cd ~
 
 echo -e "\033[31m installing node \033[0m"
-#wget https://nodejs.org/dist/v17.6.0/node-v17.6.0-linux-x64.tar.xz
-#tar xf node-v17.6.0-linux-x64.tar.xz
-#mv node-v17.6.0-linux-x64 node
-#sudo ln -s ~/node/bin/node /usr/bin/node
-#sudo ln -s ~/node/bin/npm /usr/bin/npm
-#npm i hexo-cli -g
+wget https://nodejs.org/dist/v17.6.0/node-v17.6.0-linux-x64.tar.xz
+tar xf node-v17.6.0-linux-x64.tar.xz
+mv node-v17.6.0-linux-x64 node
+sudo ln -s ~/node/bin/node /usr/bin/node
+sudo ln -s ~/node/bin/npm /usr/bin/npm
+npm i hexo-cli -g
 
 echo -e "\033[31m installing tmux \033[0m"
 sudo apt install tmux
@@ -61,9 +61,9 @@ export GO111MODULE=on
 go env -w GOPROXY=https://goproxy.cn
 go get -u mvdan.cc/sh/cmd/shfmt
 echo "export PATH=\"~/go/bin:\$PATH\"" >>~/.bashrc
+echo "export PATH=\"~/node/bin:\$PATH\"" >>~/.bashrc
 
 echo -e "\033[31m installing okular \033[0m"
-sudo apt-get install qt5-default qtbase5-dev
 sudo apt install binutils
 sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
 sudo apt install okular
