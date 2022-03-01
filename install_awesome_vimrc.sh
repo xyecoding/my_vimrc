@@ -2,7 +2,7 @@
 set -e
 
 cd ~
-
+mkdir temp_try
 echo -e "\033[31m installing node \033[0m"
 wget https://nodejs.org/dist/v17.6.0/node-v17.6.0-linux-x64.tar.xz
 tar xf node-v17.6.0-linux-x64.tar.xz
@@ -73,6 +73,8 @@ sudo apt install trash-cli -y
 echo "alias vi=nvim" >>~/.bashrc
 echo "alias vim=nvim" >>~/.bashrc
 echo "alias rm=trash-put" >>~/.bashrc
+
+echo "alias cdt=cd ~/temp_try" >>~/.bashrc
 
 echo -e "\033[31m allow to fill the bash variable in the command line in tab \033[0m"
 echo "shopt -s direxpand" >>~/.bashrc
