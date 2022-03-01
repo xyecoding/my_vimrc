@@ -79,4 +79,5 @@ echo -e "\033[31m clone my blog \033[0m"
 git clone -b hexo git@github.com:xyegithub/myBlog.git
 
 echo -e "\033[31m For Latex backwordsearch support, you need to add \"nvr --remote-silent +%l %f\" to your okular \033[0m"
+echo -e "\033[31m For Latex backwordsearch support, you need to add \"nvr --remote-silent +%2 %1\" to your qpdfview \033[0m"
 echo -e "\033[31m run :PluginInstall in your vim for installing some plugins \033[0m"
