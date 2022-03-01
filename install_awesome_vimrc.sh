@@ -74,10 +74,10 @@ echo "alias vi=nvim" >>~/.bashrc
 echo "alias vim=nvim" >>~/.bashrc
 echo "alias rm=trash-put" >>~/.bashrc
 
-echo "alias cdtp=\'cd ~/temp_try\'" >>~/.bashrc
-echo "alias cdvi=\'cd ~/.vim_runtime\'" >>~/.bashrc
-echo "alias cdbg=\'cd ~/myBlog\'" >>~/.bashrc
-echo "alias cdpp=\'cd ~/mypaper\'" >>~/.bashrc
+echo "alias ctp=\'cd ~/temp_try\'" >>~/.bashrc
+echo "alias cvi=\'cd ~/.vim_runtime\'" >>~/.bashrc
+echo "alias cbg=\'cd ~/myBlog\'" >>~/.bashrc
+echo "alias cpp=\'cd ~/mypaper\'" >>~/.bashrc
 echo "alias cltp=\'rm -rf ~/temp_try/*\'" >>~/.bashrc
 
 echo -e "\033[31m allow to fill the bash variable in the command line in tab \033[0m"
