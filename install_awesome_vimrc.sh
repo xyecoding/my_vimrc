@@ -74,6 +74,11 @@ echo "alias vi=nvim" >>~/.bashrc
 echo "alias vim=nvim" >>~/.bashrc
 echo "alias rm=trash-put" >>~/.bashrc
 
+echo -e "\033[31m allow to fill the bash variable in the command line in tab \033[0m"
+echo "shopt -s direxpand" >>~/.bashrc
+echo "de=\"/mnt/c/Users/12197/Desktop\"" >>~/.bashrc
+echo "de=\"/mnt/c/Users/12197/Downloads\"" >>~/.bashrc
+
 cd ~
 echo -e "\033[31m clone my blog \033[0m"
 git clone -b hexo git@github.com:xyegithub/myBlog.git
