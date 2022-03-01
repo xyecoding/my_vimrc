@@ -74,7 +74,10 @@ echo "alias vi=nvim" >>~/.bashrc
 echo "alias vim=nvim" >>~/.bashrc
 echo "alias rm=trash-put" >>~/.bashrc
 
-echo "alias cdt=cd ~/temp_try" >>~/.bashrc
+echo "alias cdt=\'cd ~/temp_try\'" >>~/.bashrc
+echo "alias cdv=\'cd ~/.vim_runtime\'" >>~/.bashrc
+echo "alias cdb=\'cd ~/myBlog\'" >>~/.bashrc
+echo "alias cdp=\'cd ~/mypaper\'" >>~/.bashrc
 
 echo -e "\033[31m allow to fill the bash variable in the command line in tab \033[0m"
 echo "shopt -s direxpand" >>~/.bashrc
