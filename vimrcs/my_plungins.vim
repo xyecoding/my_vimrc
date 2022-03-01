@@ -388,8 +388,18 @@ map oo <plug>NERDCommenterUncomment
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_defaultGroup = 'SpecialKey'
 let g:vim_markdown_conceal = 0
+let g:vim_tex_conceal = 0
+let g:vim_tex_conceal_code_blocks = 0
+" let g:indentLine_fileTypeExclude = ['tex']
 let g:vim_markdown_conceal_code_blocks = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_enabled = 0
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"IndentGuids
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
