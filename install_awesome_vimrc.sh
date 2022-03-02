@@ -62,6 +62,7 @@ go env -w GOPROXY=https://goproxy.cn
 go get -u mvdan.cc/sh/cmd/shfmt
 echo "export PATH=\"~/go/bin:\$PATH\"" >>~/.bashrc
 echo "export PATH=\"~/node/bin:\$PATH\"" >>~/.bashrc
+npm install -g remark-cli
 npm install prettier remark-prettier -g
 
 echo -e "\033[31m installing okular \033[0m"
