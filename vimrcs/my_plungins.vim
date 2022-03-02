@@ -400,8 +400,10 @@ let g:indent_guides_auto_colors = 0
 "autoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufWrite * :Autoformat
-let g:formatdef_remark_markdown = '"~/.vim_runtime/vimrcs/auto-format/node_modules/.bin/remark --silent --no-color"'
-let g:formatters_markdown = ['prettier']
+let g:formatdef_remark_markdown = '"~/.vim_runtime/vimrcs/auto-format/node_modules/.bin/remark --use remark-prettier --silent --no-color"'
+" let g:formatdef_remark_markdown = '"~/temp_try/node_modules/.bin/prettier"'
+" let g:formatdef_prettier = '"~/temp_try/node_modules/.bin/prettier"'
+let g:formatters_markdown = ['remark_markdown']
 autocmd FileType markdown let b:autoformat_autoindent=0
 " let g:formatters_markdown = ['remark_markdown', 'prettier', 'stylelint']
 
