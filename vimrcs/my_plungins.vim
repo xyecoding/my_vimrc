@@ -4,7 +4,7 @@
 "
 "" set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
-let g:mkdp_auto_start = 1
+" let g:mkdp_auto_start = 1
 
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
@@ -387,11 +387,7 @@ map oo <plug>NERDCommenterUncomment
 "indentLine
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_defaultGroup = 'SpecialKey'
-let g:vim_markdown_conceal = 0
-let g:vim_tex_conceal = 0
-let g:vim_tex_conceal_code_blocks = 0
 " let g:indentLine_fileTypeExclude = ['tex']
-let g:vim_markdown_conceal_code_blocks = 0
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_enabled = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -405,8 +401,12 @@ let g:indent_guides_auto_colors = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufWrite * :Autoformat
 let g:formatdef_remark_markdown = '"~/.vim_runtime/vimrcs/auto-format/node_modules/.bin/remark --silent --no-color"'
-let g:formatters_markdown = ['remark_markdown', 'prettier', 'stylelint']
+let g:formatters_markdown = ['prettier']
+autocmd FileType markdown let b:autoformat_autoindent=0
+" let g:formatters_markdown = ['remark_markdown', 'prettier', 'stylelint']
 
+" let g:formatdef_pandoc = '"pandoc -t markdown"'
+" let g:formatters_pandoc = ['pandoc']
 let g:formatdef_shfmt = '"~/go/bin/shfmt -i ".(&expandtab ? shiftwidth() : "0")'
 let g:formatters_sh = ['shfmt']
 

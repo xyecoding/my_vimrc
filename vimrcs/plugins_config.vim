@@ -114,7 +114,7 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => surround.vim config
-" Annotate strings with gettext 
+" Annotate strings with gettext
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vmap Si S(i_<esc>f)
 au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
@@ -124,25 +124,25 @@ au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
 " => lightline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'filename', 'modified'] ],
-      \   'right': [ [ 'lineinfo' ], ['percent'] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
-      \ },
-      \ 'separator': { 'left': ' ', 'right': ' ' },
-      \ 'subseparator': { 'left': ' ', 'right': ' ' }
-      \ }
+            \ 'colorscheme': 'wombat',
+            \ 'active': {
+                \   'left': [ ['mode', 'paste'],
+                \             ['fugitive', 'readonly', 'filename', 'modified'] ],
+                \   'right': [ [ 'lineinfo' ], ['percent'] ]
+                \ },
+                \ 'component': {
+                    \   'readonly': '%{&filetype=="help"?"":&readonly?"🔒":""}',
+                    \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+                    \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}'
+                    \ },
+                    \ 'component_visible_condition': {
+                        \   'readonly': '(&filetype!="help"&& &readonly)',
+                        \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+                        \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
+                        \ },
+                        \ 'separator': { 'left': ' ', 'right': ' ' },
+                        \ 'subseparator': { 'left': ' ', 'right': ' ' }
+                        \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vimroom
@@ -157,10 +157,10 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Ale (syntax checker and linter)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'python': ['flake8'],
-\   'go': ['go', 'golint', 'errcheck']
-\}
+            \   'javascript': ['eslint'],
+            \   'python': ['flake8'],
+            \   'go': ['go', 'golint', 'errcheck']
+            \}
 
 nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
@@ -200,4 +200,12 @@ xnoremap <leader>v :'<'>GBrowse!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
 let g:AutoPairs['<']='>'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_math = 1
+" let g:vim_markdown_conceal = 0
+" let g:vim_markdown_conceal_code_blocks = 0
+
 
