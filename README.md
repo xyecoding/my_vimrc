@@ -25,5 +25,16 @@ git clone git@github.com:xyegithub/my\_vimrc.git ~/.vim\_runtime
 
 Just do following:
 
-*   Remove `~/.vim_runtime`
-*   Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
+- Remove `~/.vim_runtime`
+
+- Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
+
+# Some modify about plugins
+
+## vimtex
+
+When more than one tex file is edited all using vimtex, it can not refresh the
+pdf when the tex file is saved.
+
+To overcome this, the source file of vimtex is modified `vimtex/autoload/vimtex/view.vim:`
+line 57 `call b:vimtex.viewer.compiler_callback(l:outfile)` is changed into `VimtexView`.

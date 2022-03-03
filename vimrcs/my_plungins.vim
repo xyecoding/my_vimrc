@@ -145,8 +145,13 @@ let g:vimtex_quickfix_ignore_filters = [
             \ 'Overfull',
             \]
 let g:vimtex_quickfix_mode = 0
+augroup VimTeX
+    autocmd!
+    autocmd BufWritePost *.tex call vimtex#toc#refresh()
+augroup END
 
-
+" autocmd BufWrite *.tex :VimtexView
+autocmd BufWrite *.tex :call vimtex#toc#refresh()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc-nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
