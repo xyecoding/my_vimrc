@@ -404,8 +404,6 @@ let g:formatdef_remark_markdown = '"~/node/bin/remark --use remark-prettier --si
 " autocmd FileType markdown let b:autoformat_autoindent=0
 let g:formatters_markdown = ['remark_markdown', 'prettier', 'stylelint']
 
-" let g:formatdef_pandoc = '"pandoc -t markdown"'
-" let g:formatters_pandoc = ['pandoc']
 let g:formatdef_shfmt = '"~/go/bin/shfmt -i ".(&expandtab ? shiftwidth() : "0")'
 let g:formatters_sh = ['shfmt']
 let g:formatdef_latexindent = '"~/anaconda3/bin/latexindent.pl -"'

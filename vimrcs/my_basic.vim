@@ -17,6 +17,10 @@ nmap    <C-Q>   :q!<CR>
 imap   <C-A>   <ESC>:q<CR>
 nmap    <C-A>   :q<CR>
 
+imap   <C-O>   <ESC>:bp<CR>
+nmap    <C-O>   :bp<CR>
+imap   <C-P>   <ESC>:bn<CR>
+nmap    <C-P>   :bn<CR>
 autocmd BufNewFile,BufRead *.tex,*.md  set spell
 
 set termguicolors
