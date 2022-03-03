@@ -26,7 +26,12 @@ cp ~/.vim_runtime/.tmux.conf ~
 # initexmf --set-config-value [MPM]AutoInstall=1
 
 echo -e "\033[31m installing texlive \033[0m"
-sudo apt-get install texlive-full
+mkdir texlive
+cd texlive
+wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+tar -zxvf install-tl-unx.tar.gz
+cd install-tl-20220302
+sudo perl install-tl
 
 echo -e "\033[31m installing neovim \033[0m"
 sudo add-apt-repository ppa:neovim-ppa/stable

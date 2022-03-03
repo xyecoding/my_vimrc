@@ -400,19 +400,15 @@ let g:indent_guides_auto_colors = 0
 "autoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufWrite * :Autoformat
-" let g:formatdef_remark_markdown = '"~/.vim_runtime/vimrcs/auto-format/node_modules/.bin/remark --use ~/temp_try/node_modules/.bin/prettier --silent --no-color"'
 let g:formatdef_remark_markdown = '"~/node/bin/remark --use remark-prettier --silent --no-color"'
-" let g:formatdef_remark_markdown = '"~/.vim_runtime/vimrcs/auto-format/node_modules/.bin/remark --use remark-prettier --silent --no-color"'
-" let g:formatdef_remark_markdown = '"~/temp_try/node_modules/.bin/prettier"'
-" let g:formatdef_prettier = '"~/temp_try/node_modules/.bin/prettier"'
-let g:formatters_markdown = ['remark_markdown']
-autocmd FileType markdown let b:autoformat_autoindent=0
-" let g:formatters_markdown = ['remark_markdown', 'prettier', 'stylelint']
+" autocmd FileType markdown let b:autoformat_autoindent=0
+let g:formatters_markdown = ['remark_markdown', 'prettier', 'stylelint']
 
 " let g:formatdef_pandoc = '"pandoc -t markdown"'
 " let g:formatters_pandoc = ['pandoc']
 let g:formatdef_shfmt = '"~/go/bin/shfmt -i ".(&expandtab ? shiftwidth() : "0")'
 let g:formatters_sh = ['shfmt']
-
+let g:formatdef_latexindent = '"~/anaconda3/bin/latexindent.pl -"'
+let g:formatters_tex = ['latexindent']
 
 
