@@ -54,8 +54,8 @@ function! vimtex#view#compiler_callback() abort " {{{1
         let l:outfile = b:vimtex.viewer.out()
         if !filereadable(l:outfile) | return | endif
 
-        " call b:vimtex.viewer.compiler_callback(l:outfile)
-        VimtexView
+        call b:vimtex.viewer.compiler_callback(l:outfile)
+        " VimtexView
     endif
 endfunction
 

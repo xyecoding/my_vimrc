@@ -29,12 +29,14 @@ Just do following:
 
 - Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
 
-# Some modify about plugins
+# Some modify about plugins or notations
 
-## vimtex
+## Vimtex
 
-When more than one tex file is edited all using vimtex, it can not refresh the
-pdf when the tex file is saved.
+### Notations
 
-To overcome this, the source file of vimtex is modified `vimtex/autoload/vimtex/view.vim:`
-line 57 `call b:vimtex.viewer.compiler_callback(l:outfile)` is changed into `VimtexView`.
+1.  When more than one tex file is edited all using vimtex, it can not refresh the
+    pdf when the tex file is saved. To overcome this, the source file of vimtex is
+    modified `vimtex/autoload/vimtex/view.vim:`
+    line 57 `call b:vimtex.viewer.compiler_callback(l:outfile)` is changed into `VimtexView`.
+    **However, a more elegant method is to enable the `Auto-refresh` setting in qpdfview.**
