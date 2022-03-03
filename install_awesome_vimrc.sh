@@ -2,6 +2,11 @@
 set -e
 
 cd ~
+
+echo -e "\033[31m installing Anaconda \033[0m"
+wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
+bash Anaconda3-2021.11-Linux-x86_64.sh
+
 mkdir temp_try
 echo -e "\033[31m installing node \033[0m"
 wget https://nodejs.org/dist/v17.6.0/node-v17.6.0-linux-x64.tar.xz
@@ -9,6 +14,7 @@ tar xf node-v17.6.0-linux-x64.tar.xz
 mv node-v17.6.0-linux-x64 node
 sudo ln -s ~/node/bin/node /usr/bin/node
 sudo ln -s ~/node/bin/npm /usr/bin/npm
+echo "export PATH=\"~/node/bin:\$PATH\"" >>~/.bashrc
 npm i hexo-cli -g
 
 echo -e "\033[31m installing tmux \033[0m"
@@ -32,7 +38,6 @@ wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 tar -zxvf install-tl-unx.tar.gz
 cd install-tl-20220302
 sudo perl install-tl
-echo "export PATH=\"~/node/bin:\$PATH\"" >>~/.bashrc
 echo "export PATH=\"/usr/local/texlive/2021/bin/x86_64-linux:\$PATH\"" >>~/.bashrc
 
 echo -e "\033[31m installing neovim \033[0m"
@@ -72,7 +77,6 @@ export GO111MODULE=on
 go env -w GOPROXY=https://goproxy.cn
 go get -u mvdan.cc/sh/cmd/shfmt
 echo "export PATH=\"~/go/bin:\$PATH\"" >>~/.bashrc
-echo "export PATH=\"~/node/bin:\$PATH\"" >>~/.bashrc
 npm install -g remark-cli
 npm install prettier remark-prettier -g
 
