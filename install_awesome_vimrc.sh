@@ -32,13 +32,15 @@ wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
 tar -zxvf install-tl-unx.tar.gz
 cd install-tl-20220302
 sudo perl install-tl
+echo "export PATH=\"~/node/bin:\$PATH\"" >>~/.bashrc
+echo "export PATH=\"/usr/local/texlive/2021/bin/x86_64-linux:\$PATH\"" >>~/.bashrc
 
 echo -e "\033[31m installing neovim \033[0m"
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt install neovim -y
 
 echo -e "\033[31m pip install pyvim and neovim-remote \033[0m"
-pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pynvim neovim-remote
+~/anaconda3/bin/pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pynvim neovim-remote
 
 cd ~/.vim_runtime
 
@@ -63,7 +65,8 @@ echo -e "\033[31m Disable the stty shortcuts such as ctrl s, for neovim will use
 echo "stty -ixon" >>~/.bashrc
 
 echo -e "\033[31m installing formate of different type of filse used by vim-autoformat \033[0m"
-conda install latexindent.pl -c conda-forge
+~/anaconda3/bin/conda install latexindent.pl -c conda-forge
+
 sudo apt install golang-go -y
 export GO111MODULE=on
 go env -w GOPROXY=https://goproxy.cn
@@ -73,10 +76,12 @@ echo "export PATH=\"~/node/bin:\$PATH\"" >>~/.bashrc
 npm install -g remark-cli
 npm install prettier remark-prettier -g
 
-echo -e "\033[31m installing okular \033[0m"
-sudo apt install binutils -y
-sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
-sudo apt install okular -y
+# echo -e "\033[31m installing okular \033[0m"
+# sudo apt install binutils -y
+# sudo strip --remove-section=.note.ABI-tag /usr/lib/x86_64-linux-gnu/libQt5Core.so.5
+# sudo apt install okular -y
+echo -e "\033[31m installing qpdfview \033[0m"
+sudo apt install qpdfview
 
 echo -e "\033[31m installing recycle bin for linux \033[0m"
 sudo apt install trash-cli -y
@@ -102,3 +107,4 @@ git clone -b hexo git@github.com:xyegithub/myBlog.git
 echo -e "\033[31m For Latex backwordsearch support, you need to add \"nvr --remote-silent +%l %f\" to your okular \033[0m"
 echo -e "\033[31m For Latex backwordsearch support, you need to add \"nvr --remote-silent +%2 %1\" to your qpdfview \033[0m"
 echo -e "\033[31m run :PluginInstall in your vim for installing some plugins \033[0m"
+echo -e "\033[31m To install the package of latex using tlmgr, add '/usr/local/texlive/2021/bin/x86_64-linux' to the $(secure_path) in '/etc/sudoers' file, sudo tlmgr install xxx \033[0m"
