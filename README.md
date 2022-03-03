@@ -35,8 +35,8 @@ Just do following:
 
 ### Notations
 
-1.  When more than one tex file is edited all using vimtex, it can not refresh the
-    pdf when the tex file is saved. To overcome this, the source file of vimtex is
-    modified `vimtex/autoload/vimtex/view.vim:`
+1.  When more than one tex files are edited all using vimtex, the pdf can not be
+    refreshed when the tex file is saved. To overcome this, the source file of vimtex is
+    modified `vimtex/autoload/vimtex/view.vim`.
     line 57 `call b:vimtex.viewer.compiler_callback(l:outfile)` is changed into `VimtexView`.
     **However, a more elegant method is to enable the `Auto-refresh` setting in qpdfview.**
