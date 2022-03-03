@@ -111,4 +111,4 @@ git clone -b hexo git@github.com:xyegithub/myBlog.git
 echo -e "\033[31m For Latex backwordsearch support, you need to add \"nvr --remote-silent +%l %f\" to your okular \033[0m"
 echo -e "\033[31m For Latex backwordsearch support, you need to add \"nvr --remote-silent +%2 %1\" to your qpdfview \033[0m"
 echo -e "\033[31m run :PluginInstall in your vim for installing some plugins \033[0m"
-echo -e "\033[31m To install the package of latex using tlmgr, add '/usr/local/texlive/2021/bin/x86_64-linux' to the $(secure_path) in '/etc/sudoers' file, sudo tlmgr install xxx \033[0m"
+echo -e "\033[31m To install the package of latex using tlmgr, add '/usr/local/texlive/2021/bin/x86_64-linux' to the 'secure_path' in '/etc/sudoers' file, sudo tlmgr install xxx \033[0m"
