@@ -29,7 +29,7 @@ Just do following:
 
 - Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
 
-# Some modify about plugins or notations
+# Some modifies or notations about plugins
 
 ## Vimtex
 

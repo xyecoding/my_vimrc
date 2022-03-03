@@ -391,9 +391,10 @@ map oo <plug>NERDCommenterUncomment
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "indentLine
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_defaultGroup = 'SpecialKey'
+" let g:indentLine_defaultGroup = 'SpecialKey'
 " let g:indentLine_fileTypeExclude = ['tex']
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" let g:indentLine_setConceal=0
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indentLine_enabled = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "IndentGuids
@@ -401,6 +402,7 @@ let g:indentLine_enabled = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
+let g:indent_guides_tab_guides = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -413,5 +415,6 @@ let g:formatdef_shfmt = '"~/go/bin/shfmt -i ".(&expandtab ? shiftwidth() : "0")'
 let g:formatters_sh = ['shfmt']
 let g:formatdef_latexindent = '"~/anaconda3/bin/latexindent.pl -"'
 let g:formatters_tex = ['latexindent']
-
-
+" autocmd FileType snippets let b:autoformat_autoindent=0
+"
+let g:formatters_snippets = ['autopep8','yapf', 'black']
