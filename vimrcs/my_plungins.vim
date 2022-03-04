@@ -417,4 +417,4 @@ let g:formatdef_latexindent = '"~/anaconda3/bin/latexindent.pl -"'
 let g:formatters_tex = ['latexindent']
 autocmd FileType snippets let b:autoformat_autoindent=0
 "
-" let g:formatters_snippets = []
+" let g:formatters_snippets = ['shfmt']
