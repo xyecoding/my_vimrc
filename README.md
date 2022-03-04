@@ -40,3 +40,9 @@ Just do following:
     modified `vimtex/autoload/vimtex/view.vim`.
     line 57 `call b:vimtex.viewer.compiler_callback(l:outfile)` is changed into `VimtexView`.
     **However, a more elegant method is to enable the `Auto-refresh` setting in qpdfview.**
+
+# Neoformat
+
+1.  `latexindent.pl` use `"\t"` as the default indent char, which conflicts with vim-indent-guide.
+    To change the default indent char of `latexindent.pl`, the 147 line of
+    `~/anaconda3/bin/LatexIndent/defaultSettings.yaml` is changed into `defaultIndent:" "`.

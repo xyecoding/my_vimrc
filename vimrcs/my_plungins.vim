@@ -402,7 +402,7 @@ map oo <plug>NERDCommenterUncomment
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
-let g:indent_guides_tab_guides = 0
+let g:indent_guides_tab_guides = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey ctermbg=white
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=red
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -421,14 +421,17 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=red
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "neoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" au BufWrite * :Neoformat
-
 augroup fmt
     autocmd!
-    au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+    autocmd BufWritePre * Neoformat
 augroup END
-let g:neoformat_try_formatprg = 1
+
+" augroup fmt
+"     autocmd!
+"     au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+" augroup END
+
+" let g:neoformat_try_formatprg = 1
 " let g:neoformat_tex_latexindent = {
 "             \ 'exe': '/home/yexiang/anaconda3/bin/latexindent.pl',
 "             \ 'args': ['-g /dev/stderr', '2>/dev/null'],
@@ -445,4 +448,4 @@ let g:neoformat_basic_format_retab = 1
 
 " Enable trimmming of trailing whitespace
 let g:neoformat_basic_format_trim = 1
-
+" let g:neoformat_verbose = 1
