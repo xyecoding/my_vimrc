@@ -395,7 +395,7 @@ map oo <plug>NERDCommenterUncomment
 " let g:indentLine_fileTypeExclude = ['tex']
 " let g:indentLine_setConceal=0
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_enabled = 0
+" let g:indentLine_enabled = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "IndentGuids
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -417,6 +417,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=red
 " let g:formatdef_latexindent = '"~/anaconda3/bin/latexindent.pl -"'
 " let g:formatters_snippets = ['shfmt']
 "
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "neoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
