@@ -429,15 +429,12 @@ augroup fmt
     au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
 augroup END
 let g:neoformat_try_formatprg = 1
-let g:neoformat_tex_latexindent = {
-            \ 'exe': '/home/yexiang/anaconda3/bin/latexindent.pl',
-            \ 'args': ['-g /dev/stderr', '2>/dev/null'],
-            \ 'stdin': 1,
-            \ }
-let g:neoformat_enabled_tex = ['latexindent']
-
-
-
+" let g:neoformat_tex_latexindent = {
+"             \ 'exe': '/home/yexiang/anaconda3/bin/latexindent.pl',
+"             \ 'args': ['-g /dev/stderr', '2>/dev/null'],
+"             \ 'stdin': 1,
+"             \ }
+" let g:neoformat_enabled_tex = ['latexindent']
 
 " Enable alignment
 let g:neoformat_basic_format_align = 1
