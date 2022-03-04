@@ -38,5 +38,8 @@ hi PmenuSel       guifg=#000000     guibg=#cae682     gui=NONE      ctermfg=NONE
 hi PmenuSbar        guifg=black       guibg=white       gui=NONE      ctermfg=black       ctermbg=white       cterm=NONE
 filetype plugin on
 
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey ctermbg=white
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=red
+
+
+
+
+

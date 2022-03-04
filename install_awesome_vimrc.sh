@@ -14,7 +14,7 @@ tar xf node-v17.6.0-linux-x64.tar.xz
 mv node-v17.6.0-linux-x64 node
 sudo ln -s ~/node/bin/node /usr/bin/node
 sudo ln -s ~/node/bin/npm /usr/bin/npm
-echo "export PATH=\"~/node/bin:\$PATH\"" >>~/.bashrc
+echo "export PATH=~/node/bin:\$PATH >>~/.bashrc
 npm i hexo-cli -g
 
 echo -e "\033[31m installing tmux \033[0m"
@@ -76,7 +76,7 @@ sudo apt install golang-go -y
 export GO111MODULE=on
 go env -w GOPROXY=https://goproxy.cn
 go get -u mvdan.cc/sh/cmd/shfmt
-echo "export PATH=\"~/go/bin:\$PATH\"" >>~/.bashrc
+echo "export PATH=~/go/bin:\$PATH >>~/.bashrc
 npm install -g remark-cli
 npm install prettier remark-prettier -g
 
@@ -92,13 +92,18 @@ sudo apt install trash-cli -y
 echo "alias vi=nvim" >>~/.bashrc
 echo "alias vim=nvim" >>~/.bashrc
 echo "alias rm=trash-put" >>~/.bashrc
+echo "alias cltp=\'rm -rf ~/temp_try/*\'" >>~/.bashrc
 
 echo "alias ctp=\'cd ~/temp_try\'" >>~/.bashrc
-echo "alias cvi=\'cd ~/.vim_runtime\'" >>~/.bashrc
 echo "alias cbg=\'cd ~/myBlog\'" >>~/.bashrc
 echo "alias cpp=\'cd ~/mypaper\'" >>~/.bashrc
+
+echo "alias cvh=\'cd ~/.vim_runtime\'" >>~/.bashrc
 echo "alias csn=\'cd ~/.vim_runtime/my_plugins/vim-snippets/UltiSnips\'" >>~/.bashrc
-echo "alias cltp=\'rm -rf ~/temp_try/*\'" >>~/.bashrc
+
+echo "alias vvp=\'vi ~/.vim_runtime/vimrcs/my_plungins.vim\'" >>~/.bashrc
+echo "alias vvi=\'vi ~/.vim_runtime/install_awesome_vimrc.sh\'" >>~/.bashrc
+echo "alias vbr=\'vi ~/.bashrc\'" >>~/.bashrc
 
 echo -e "\033[31m allow to fill the bash variable in the command line in tab \033[0m"
 echo "shopt -s direxpand" >>~/.bashrc

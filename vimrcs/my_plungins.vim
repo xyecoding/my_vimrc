@@ -403,18 +403,48 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_tab_guides = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey ctermbg=white
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=red
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufWrite * :Autoformat
-let g:formatdef_remark_markdown = '"~/node/bin/remark --use remark-prettier --silent --no-color"'
-" autocmd FileType markdown let b:autoformat_autoindent=0
-let g:formatters_markdown = ['remark_markdown', 'prettier', 'stylelint']
+" au BufWrite * :Autoformat
+" let g:formatdef_remark_markdown = '"~/node/bin/remark --use remark-prettier --silent --no-color"'
+" let g:formatters_markdown = ['remark_markdown', 'prettier', 'stylelint']
 
-let g:formatdef_shfmt = '"~/go/bin/shfmt -i ".(&expandtab ? shiftwidth() : "0")'
-let g:formatters_sh = ['shfmt']
-let g:formatdef_latexindent = '"~/anaconda3/bin/latexindent.pl -"'
-let g:formatters_tex = ['latexindent']
-autocmd FileType snippets let b:autoformat_autoindent=0
-"
+" let g:formatdef_shfmt = '"~/go/bin/shfmt -i ".(&expandtab ? shiftwidth() : "0")'
+" let g:formatters_sh = ['shfmt']
+" let g:formatdef_latexindent = '"~/anaconda3/bin/latexindent.pl -"'
 " let g:formatters_snippets = ['shfmt']
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"neoformat
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" au BufWrite * :Neoformat
+
+augroup fmt
+    autocmd!
+    au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+augroup END
+let g:neoformat_try_formatprg = 1
+let g:neoformat_tex_latexindent = {
+            \ 'exe': '/home/yexiang/anaconda3/bin/latexindent.pl',
+            \ 'args': ['-g /dev/stderr', '2>/dev/null'],
+            \ 'stdin': 1,
+            \ }
+let g:neoformat_enabled_tex = ['latexindent']
+
+
+
+
+" Enable alignment
+let g:neoformat_basic_format_align = 1
+autocmd FileType snippets let g:neoformat_basic_format_align=0
+
+" Enable tab to spaces conversion
+let g:neoformat_basic_format_retab = 1
+
+" Enable trimmming of trailing whitespace
+let g:neoformat_basic_format_trim = 1
+
