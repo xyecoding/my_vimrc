@@ -97,6 +97,7 @@ echo "alias ctp=\'cd ~/temp_try\'" >>~/.bashrc
 echo "alias cvi=\'cd ~/.vim_runtime\'" >>~/.bashrc
 echo "alias cbg=\'cd ~/myBlog\'" >>~/.bashrc
 echo "alias cpp=\'cd ~/mypaper\'" >>~/.bashrc
+echo "alias csn=\'cd ~/.vim_runtime/my_plugins/vim-snippets/UltiSnips\'" >>~/.bashrc
 echo "alias cltp=\'rm -rf ~/temp_try/*\'" >>~/.bashrc
 
 echo -e "\033[31m allow to fill the bash variable in the command line in tab \033[0m"

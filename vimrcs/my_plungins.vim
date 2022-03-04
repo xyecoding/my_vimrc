@@ -157,7 +157,7 @@ autocmd BufWrite *.tex :call vimtex#toc#refresh()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
-let g:coc_global_extensions=['coc-vimtex','coc-vimlsp', 'coc-json','coc-highlight', 'coc-pyright', 'coc-spell-checker', 'coc-sh','coc-markdown-preview-enhanced','coc-css', 'coc-syntax']
+let g:coc_global_extensions=['coc-vimtex','coc-vimlsp', 'coc-json','coc-highlight', 'coc-pyright', 'coc-spell-checker', 'coc-sh','coc-markdown-preview-enhanced','coc-css', 'coc-syntax', 'coc-marketplace']
 " coc-ltex, coc-syntax, coc-markdownlint
 set encoding=utf-8
 
@@ -338,7 +338,7 @@ let g:coc_config_home= '/home/yexiang/.vim_runtime'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " snippets
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsSnippetDirectories=["UltiSnips","../../vimrcs/my_snippets/"]
+" let g:UltiSnipsSnippetDirectories=["UltiSnips","../../vimrcs/my_snippets/"]
 let g:UltiSnipsExpandTrigger="<C-K>"
 let g:UltiSnipsJumpForwardTrigger="<C-K>"
 let g:UltiSnipsJumpBackwardTrigger="<C-J>"

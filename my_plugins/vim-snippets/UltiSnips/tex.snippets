@@ -182,19 +182,19 @@ endsnippet
 ########
 
 snippet cc "subset" w
-\subset 
+\subset
 endsnippet
 
 snippet inn "in " w
-\in 
+\in
 endsnippet
 
 snippet Nn "cap" w
-\cap 
+\cap
 endsnippet
 
 snippet UU "cup" w
-\cup 
+\cup
 endsnippet
 
 snippet uuu "bigcup" w
@@ -324,11 +324,11 @@ snippet taylor "taylor" w
 endsnippet
 
 snippet lim "limit" w
-\lim_{${1:n} \to ${2:\infty}} 
+\lim_{${1:n} \to ${2:\infty}}
 endsnippet
 
 snippet limsup "limsup" w
-\limsup_{${1:n} \to ${2:\infty}} 
+\limsup_{${1:n} \to ${2:\infty}}
 endsnippet
 
 snippet prod "product" w
@@ -364,15 +364,15 @@ snippet == "Equals" w
 endsnippet
 
 snippet != "Not Equal" w
-\neq 
+\neq
 endsnippet
 
 snippet <= "leq" Aw
-\le 
+\le
 endsnippet
 
 snippet >= "geq" Aw
-\ge 
+\ge
 endsnippet
 
 snippet nn "Tikz node" w
@@ -385,7 +385,7 @@ snippet lll "l" Aw
 endsnippet
 
 snippet xx "cross" Aw
-\times 
+\times
 endsnippet
 
 snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rw
@@ -393,7 +393,7 @@ snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rw
 endsnippet
 
 snippet <! "normal" Aw
-\triangleleft 
+\triangleleft
 endsnippet
 
 snippet "(\d|\w)+invs" "inverse" Awr
@@ -401,7 +401,7 @@ snippet "(\d|\w)+invs" "inverse" Awr
 endsnippet
 
 snippet !> "mapsto" Aw
-\mapsto 
+\mapsto
 endsnippet
 
 ##########
@@ -545,4 +545,21 @@ endsnippet
 
 
 
+snippet sali "align env" A
+\\begin{align}
+	${1}&=${2} \\\\
+	\\label{eq:${3}}
+\\end{align}
+${0}
+endsnippet
 
+snippet sfig "figure env" A
+\\begin{figure}
+	\\begin{center}
+		\\includegraphics[scale=${1}]{Figures/${2}}
+	\\end{center}
+	\\caption{${3}}
+	\\label{fig:${4}}
+\\end{figure}
+${0}
+endsnippet
