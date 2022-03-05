@@ -94,16 +94,16 @@ echo "alias vim=nvim" >>~/.bashrc
 echo "alias rm=trash-put" >>~/.bashrc
 echo "alias cltp=\'rm -rf ~/temp_try/*\'" >>~/.bashrc
 
-echo "alias ctp=\'cd ~/temp_try\'" >>~/.bashrc
-echo "alias cbg=\'cd ~/myBlog\'" >>~/.bashrc
-echo "alias cpp=\'cd ~/mypaper\'" >>~/.bashrc
+echo "alias ctp='cd ~/temp_try'" >>~/.bashrc
+echo "alias cbg='cd ~/myBlog'" >>~/.bashrc
+echo "alias cpp='cd ~/mypaper'" >>~/.bashrc
 
-echo "alias cvh=\'cd ~/.vim_runtime\'" >>~/.bashrc
-echo "alias csn=\'cd ~/.vim_runtime/my_plugins/vim-snippets/UltiSnips\'" >>~/.bashrc
+echo "alias cvh='cd ~/.vim_runtime'" >>~/.bashrc
+echo "alias csn='cd ~/.vim_runtime/my_plugins/vim-snippets/UltiSnips'" >>~/.bashrc
 
-echo "alias vvp=\'vi ~/.vim_runtime/vimrcs/my_plungins.vim\'" >>~/.bashrc
-echo "alias vvi=\'vi ~/.vim_runtime/install_awesome_vimrc.sh\'" >>~/.bashrc
-echo "alias vbr=\'vi ~/.bashrc\'" >>~/.bashrc
+echo "alias vvp='vi ~/.vim_runtime/vimrcs/my_plungins.vim'" >>~/.bashrc
+echo "alias vvi='vi ~/.vim_runtime/install_awesome_vimrc.sh'" >>~/.bashrc
+echo "alias vbr='vi ~/.bashrc'" >>~/.bashrc
 
 echo -e "\033[31m allow to fill the bash variable in the command line in tab \033[0m"
 echo "shopt -s direxpand" >>~/.bashrc
