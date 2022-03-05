@@ -16,6 +16,7 @@ Plugin 'git@github.com:iamcco/markdown-preview.nvim.git'
 Plugin 'git@github.com:dkarter/bullets.vim.git'
 Plugin 'git@github.com:preservim/nerdcommenter.git'
 
+" Plugin 'git@github.com:thaerkh/vim-indentguides.git'
 Plugin 'git@github.com:sbdchd/neoformat.git'
 " Plugin 'git@github.com:vim-pandoc/vim-pandoc.git'
 Plugin 'git@github.com:nathanaelkane/vim-indent-guides.git'

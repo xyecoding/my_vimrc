@@ -403,8 +403,12 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_tab_guides = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey ctermbg=white
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=red
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey ctermbg=white
+" autocmd ViEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=red
+au VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightmagenta
+au VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey
+let g:indent_guides_color_change_percent = 1
+let g:indent_guides_start_level = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -449,3 +453,5 @@ let g:neoformat_basic_format_retab = 1
 " Enable trimmming of trailing whitespace
 let g:neoformat_basic_format_trim = 1
 " let g:neoformat_verbose = 1
+"
+"
