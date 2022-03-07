@@ -391,24 +391,28 @@ map oo <plug>NERDCommenterUncomment
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "indentLine
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:indentLine_defaultGroup = 'SpecialKey'
+let g:indentLine_defaultGroup = 'SpecialKey'
 " let g:indentLine_fileTypeExclude = ['tex']
 " let g:indentLine_setConceal=0
-" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-" let g:indentLine_enabled = 0
+let g:indentLine_faster = 1
+let g:indentLine_bufTypeExclude=['tex']
+let g:indentLine_showFirstIndentLevel=1
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+" let g:indentLine_conceallevel = 1
+" let g:indentLine_enabled = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "IndentGuids
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_tab_guides = 1
+" let g:indent_guides_enable_on_vim_startup = 0
+" let g:indent_guides_guide_size = 1
+" let g:indent_guides_auto_colors = 0
+" let g:indent_guides_tab_guides = 1
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey ctermbg=white
 " autocmd ViEnter,Colorscheme * :hi IndentGuidesEven guibg=grey ctermbg=red
-au VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightmagenta
-au VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey
-let g:indent_guides_color_change_percent = 1
-let g:indent_guides_start_level = 1
+" au VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightmagenta
+" au VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey
+" let g:indent_guides_color_change_percent = 1
+" let g:indent_guides_start_level = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
