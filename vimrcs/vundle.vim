@@ -18,7 +18,7 @@ Plugin 'git@github.com:preservim/nerdcommenter.git'
 
 Plugin 'git@github.com:sbdchd/neoformat.git'
 " Plugin 'git@github.com:vim-pandoc/vim-pandoc.git'
-Plugin 'git@github.com:nathanaelkane/vim-indent-guides.git'
+" Plugin 'git@github.com:nathanaelkane/vim-indent-guides.git'
 " Plugin 'git@github.com:vim-autoformat/vim-autoformat.git'
 Plugin 'git@github.com:Yggdroot/indentLine.git'
 "Plugin 'git@github.com:tpope/vim-repeat.git'
