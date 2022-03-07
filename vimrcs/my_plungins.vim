@@ -398,8 +398,9 @@ let g:indentLine_faster = 1
 let g:indentLine_bufTypeExclude=['tex']
 let g:indentLine_showFirstIndentLevel=1
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-" let g:indentLine_conceallevel = 1
-" let g:indentLine_enabled = 1
+let g:indentLine_conceallevel = 2
+let g:indentLine_enabled = 1
+let g:indentLine_concealcursor = ''
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "IndentGuids
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
