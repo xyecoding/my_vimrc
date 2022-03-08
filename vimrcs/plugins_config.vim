@@ -200,6 +200,9 @@ xnoremap <leader>v :'<'>GBrowse!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
 let g:AutoPairs['<']='>'
+au FileType tex let g:AutoPairs['$']='$'
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutBackInsert = '<M-b>'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-markdown

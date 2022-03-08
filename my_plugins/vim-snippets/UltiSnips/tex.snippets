@@ -165,18 +165,33 @@ snippet tab "tabular / array environment" b
 	\end{$1${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
 endsnippet
 
-snippet table "Table environment" b
+snippet stable "Table environment" Ab
 \begin{table}[${1:htpb}]
 	\centering
 	\caption{${2:caption}}
 	\label{tab:${3:label}}
 
 	\begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
-		$0${5/(?<=.)(c|l|r)|./(?1: & )/g}
+	\hline
+		$0${5/(?<=.)(c|l|r)|./(?1: & )/g} \\\\
+		\hline
 	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
 \end{table}
 endsnippet
 
+snippet *stable "Table environment" Ab
+\begin{table*}[${1:htpb}]
+	\centering
+	\caption{${2:caption}}
+	\label{tab:${3:label}}
+
+	\begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
+	\hline
+		$0${5/(?<=.)(c|l|r)|./(?1: & )/g} \\\\
+		\hline
+	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
+\end{table*}
+endsnippet
 ########
 # MATH #
 ########
@@ -511,7 +526,7 @@ snippet sec* "Section*" wi
 \section*{$1${VISUAL}}
 endsnippet
 
-snippet sub "Subsection" wi
+snippet ssec "Subsection" wi
 \subsection{$1${VISUAL}}
 endsnippet
 
@@ -519,7 +534,7 @@ snippet sub* "Subsection*" wi
 \subsection*{$1${VISUAL}}
 endsnippet
 
-snippet subsub "Subsection" wi
+snippet sssec "Subsection" wi
 \subsubsection{$1${VISUAL}}
 endsnippet
 
