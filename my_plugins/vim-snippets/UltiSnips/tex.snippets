@@ -173,7 +173,9 @@ snippet stable "Table environment" Ab
 
 	\begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
 	\hline
-		$0${5/(?<=.)(c|l|r)|./(?1: & )/g} \\\\
+		$6${5/(?<=.)(c|l|r)|./(?1: & )/g} \\\\
+		\hline
+		$7${5/(?<=.)(c|l|r)|./(?1: & )/g} \\\\
 		\hline
 	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
 \end{table}
@@ -187,7 +189,9 @@ snippet *stable "Table environment" Ab
 
 	\begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
 	\hline
-		$0${5/(?<=.)(c|l|r)|./(?1: & )/g} \\\\
+		$6${5/(?<=.)(c|l|r)|./(?1: & )/g} \\\\
+		\hline
+		$7${5/(?<=.)(c|l|r)|./(?1: & )/g} \\\\
 		\hline
 	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
 \end{table*}
