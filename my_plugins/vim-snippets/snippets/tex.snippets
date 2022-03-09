@@ -31,10 +31,10 @@ snippet mkt maketitle
 	\\maketitle
 
 # Tabular
-snippet tab tabular (or arbitrary) environment
-	\\begin{${1:tabular}}{${2:c}}
-		${0:${VISUAL}}
-	\\end{$1}
+# snippet tab tabular (or arbitrary) environment
+#     \\begin{${1:tabular}}{${2:c}}
+#         ${0:${VISUAL}}
+#     \\end{$1}
 snippet thm thm (or arbitrary) environment with optional argument
 	\\begin[${1:author}]{${2:thm}}
 		${0:${VISUAL}}
@@ -185,10 +185,6 @@ snippet ni \noindent
 #References
 snippet itd description \item
 	\\item[${1:description}] ${0:item}
-snippet figure reference to a figure
-	${1:Figure}~\\ref{${2:fig:}}
-snippet rtab reference to a table
-	Table~\\ref{tab:$1} $0
 snippet listing reference to a listing
 	${1:Listing}~\\ref{${2:list}}
 snippet section reference to a section
@@ -205,8 +201,8 @@ snippet citep \citep
 	\\citep{${1}} ${0}
 snippet citet \citet
 	\\citet{${1}} ${0}
-snippet cite \cite[]{}
-	\\cite[${1}]{${2}} ${0}
+# snippet cite \cite[]{}
+#     \\cite[${1}]{${2}} ${0}
 snippet citea \citeauthor
 	\\citeauthor{${1}} ${0}
 snippet citey \citeyear

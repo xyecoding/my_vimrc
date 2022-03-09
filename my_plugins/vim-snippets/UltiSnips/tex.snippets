@@ -159,13 +159,13 @@ snippet abs "abstract environment" b
 .\end{abstract}
 endsnippet
 
-snippet tab "tabular / array environment" b
+snippet tabu "tabular / array environment" b
 	\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
 	$0${2/(?<=.)(c|l|r)|./(?1: & )/g}
 	\end{$1${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
 endsnippet
 
-snippet stable "Table environment" Ab
+snippet stab "Table environment" Ab
 \begin{table}[${1:htpb}]
 	\centering
 	\caption{${2:caption}}
@@ -181,7 +181,7 @@ snippet stable "Table environment" Ab
 \end{table}
 endsnippet
 
-snippet *stable "Table environment" Ab
+snippet *stab "Table environment" Ab
 \begin{table*}[${1:htpb}]
 	\centering
 	\caption{${2:caption}}
@@ -196,11 +196,23 @@ snippet *stable "Table environment" Ab
 	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
 \end{table*}
 endsnippet
+
+snippet rtab "reference to a table" Aw
+Table~\\ref{tab:$1} $0
+endsnippet
+
+snippet rfig "reference to a figure" Aw
+Figure~\\ref{fig:$1} $0
+endsnippet
+
+snippet rct "reference to a cite" Aw
+\cite{$1} $0
+endsnippet
 ########
 # MATH #
 ########
 
-snippet cc "subset" w
+snippet sset "subset" w
 \subset
 endsnippet
 
