@@ -459,4 +459,7 @@ let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
 " let g:neoformat_verbose = 1
 "
-"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"vim-matchopen
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" hi link MatchOpen Error
