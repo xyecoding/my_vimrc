@@ -40,6 +40,6 @@ highlight SpellBad ctermfg=009 ctermbg=012 guifg=black guibg=lightgray gui=None
 
 filetype plugin on
 
-nmap <tab> i<CR><Esc>
+nmap <CR> i<CR><Esc>
 
 
