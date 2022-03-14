@@ -157,7 +157,7 @@ autocmd BufWrite *.tex :call vimtex#toc#refresh()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
-let g:coc_global_extensions=['coc-vimtex','coc-vimlsp', 'coc-json','coc-highlight', 'coc-pyright', 'coc-spell-checker', 'coc-sh','coc-markdown-preview-enhanced','coc-css', 'coc-syntax', 'coc-marketplace']
+" let g:coc_global_extensions=['coc-vimtex','coc-vimlsp', 'coc-json','coc-highlight', 'coc-pyright', 'coc-spell-checker', 'coc-sh','coc-markdown-preview-enhanced','coc-css', 'coc-syntax', 'coc-marketplace']
 " coc-ltex, coc-syntax, coc-markdownlint
 set encoding=utf-8
 
