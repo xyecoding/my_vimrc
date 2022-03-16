@@ -1,5 +1,6 @@
 function! neoformat#formatters#markdown#enabled() abort
-    return ['remark', 'prettierd', 'prettier', 'denofmt']
+    " return ['remark', 'prettierd', 'prettier', 'denofmt']
+    return ['prettierd', 'prettier', 'denofmt']
 endfunction
 
 function! neoformat#formatters#markdown#prettier() abort
