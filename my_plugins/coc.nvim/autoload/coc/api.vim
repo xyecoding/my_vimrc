@@ -1,8 +1,8 @@
 " ============================================================================
 " Description: Client api used by vim8
 " Author: Qiming Zhao <chemzqm@gmail.com>
-" Licence: MIT licence
-" Last Modified:  Aug 10, 2021
+" Licence: Anti 996 licence
+" Last Modified: Mar 08, 2022
 " ============================================================================
 if has('nvim') | finish | endif
 scriptencoding utf-8
@@ -21,16 +21,19 @@ function! s:buf_line_count(bufnr) abort
     if empty(info)
       return 0
     endif
-    return info[0]['linecount']
+    " vim 8.1 has getbufinfo but no linecount
+    if has_key(info[0], 'linecount')
+      return info[0]['linecount']
+    endif
   endif
   if exists('*getbufline')
     let lines = getbufline(a:bufnr, 1, '$')
     return len(lines)
   endif
   let curr = bufnr('%')
-  execute 'buffer '.a:bufnr
+  execute 'noa buffer '.a:bufnr
   let n = line('$')
-  execute 'buffer '.curr
+  execute 'noa buffer '.curr
   return n
 endfunction
 
@@ -360,7 +363,7 @@ function! s:funcs.buf_set_lines(bufnr, start, end, strict, ...) abort
   endif
   let replacement = get(a:, 1, [])
   let lineCount = s:buf_line_count(a:bufnr)
-  let startLnum = a:start >= 0 ? a:start + 1 : lineCount + a:start + 1
+  let startLnum = a:start >= 0 ? a:start + 1 : lineCount + a:start + 2
   let end = a:end >= 0 ? a:end : lineCount + a:end + 1
   if end == lineCount + 1
     let end = lineCount
@@ -441,7 +444,14 @@ function! s:funcs.buf_set_var(bufnr, name, val)
 endfunction
 
 function! s:funcs.buf_del_var(bufnr, name)
-  call coc#compat#buf_del_var(a:bufnr, a:name)
+  if bufnr == bufnr('%')
+    execute 'unlet! b:'.a:name
+  elseif exists('*win_execute')
+    let winid = coc#compat#buf_win_id(a:bufnr)
+    if winid != -1
+      call win_execute(winid, 'unlet! b:'.a:name)
+    endif
+  endif
 endfunction
 
 function! s:funcs.buf_get_option(bufnr, name)

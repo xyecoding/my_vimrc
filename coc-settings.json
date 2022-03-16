@@ -1,0 +1,7 @@
+{
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "suggest.noselect": true,
+  "suggest.enablePreselect": false,
+  "coc-actions.hideCursor": false,
+  "coc-actions.showActionKind": true
+}

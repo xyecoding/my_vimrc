@@ -58,8 +58,9 @@ source ~/.vim_runtime/vimrcs/basic.vim
 source ~/.vim_runtime/vimrcs/filetypes.vim
 source ~/.vim_runtime/vimrcs/plugins_config.vim
 source ~/.vim_runtime/vimrcs/extended.vim
-source ~/.vim_runtime/vimrcs/vundle.vim
+source ~/.vim_runtime/vimrcs/vim_plug.vim
 source ~/.vim_runtime/vimrcs/my_plungins.vim
+source ~/.vim_runtime/vimrcs/coc.vim
 source ~/.vim_runtime/vimrcs/my_basic.vim
 ' >~/.vimrc
 

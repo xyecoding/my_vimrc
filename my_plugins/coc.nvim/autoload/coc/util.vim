@@ -3,7 +3,7 @@ let s:root = expand('<sfile>:h:h:h')
 let s:is_win = has('win32') || has('win64')
 let s:is_vim = !has('nvim')
 let s:clear_match_by_id = has('nvim-0.5.0') || has('patch-8.1.1084')
-let s:vim_api_version = 14
+let s:vim_api_version = 25
 let s:activate = ""
 let s:quit = ""
 
@@ -21,6 +21,12 @@ endif
 
 function! coc#util#api_version() abort
   return s:vim_api_version
+endfunction
+
+function! coc#util#semantic_hlgroups() abort
+  let res = split(execute('hi'), "\n")
+  let filtered = filter(res, "v:val =~# '^CocSem'")
+  return map(filtered, "matchstr(v:val,'\\v^CocSem\\w+')")
 endfunction
 
 " get cursor position
@@ -168,6 +174,12 @@ function! coc#util#jump(cmd, filepath, ...) abort
     else
       exec 'drop '.fnameescape(file)
     endif
+  elseif a:cmd == 'edit'
+    if bufloaded(file)
+      exe 'b '.bufnr(file)
+    else
+      exe a:cmd.' '.fnameescape(file)
+    endif
   else
     exe a:cmd.' '.fnameescape(file)
   endif
@@ -220,7 +232,7 @@ function! s:Call(method, args)
   endtry
 endfunction
 
-function! coc#util#get_bufoptions(bufnr, maxFileSize) abort
+function! coc#util#get_bufoptions(bufnr) abort
   if !bufloaded(a:bufnr) | return v:null | endif
   let bufname = bufname(a:bufnr)
   let buftype = getbufvar(a:bufnr, '&buftype')
@@ -231,23 +243,23 @@ function! coc#util#get_bufoptions(bufnr, maxFileSize) abort
   elseif !empty(bufname)
     let size = getfsize(bufname)
   endif
-  let lines = []
-  if getbufvar(a:bufnr, 'coc_enabled', 1) && (buftype == '' || buftype == 'acwrite') && size < a:maxFileSize
+  let lines = v:null
+  if getbufvar(a:bufnr, 'coc_enabled', 1) && (buftype == '' || buftype == 'acwrite') && size < get(g:, 'coc_max_filesize', 2097152)
     let lines = getbufline(a:bufnr, 1, '$')
   endif
   return {
-        \ 'bufname': bufname,
         \ 'size': size,
-        \ 'buftype': buftype,
+        \ 'lines': lines,
         \ 'winid': winid,
+        \ 'bufname': bufname,
+        \ 'buftype': buftype,
         \ 'previewwindow': v:false,
-        \ 'variables': s:variables(a:bufnr),
-        \ 'fullpath': empty(bufname) ? '' : fnamemodify(bufname, ':p'),
         \ 'eol': getbufvar(a:bufnr, '&eol'),
+        \ 'variables': s:variables(a:bufnr),
         \ 'filetype': getbufvar(a:bufnr, '&filetype'),
         \ 'iskeyword': getbufvar(a:bufnr, '&iskeyword'),
         \ 'changedtick': getbufvar(a:bufnr, 'changedtick'),
-        \ 'lines': lines,
+        \ 'fullpath': empty(bufname) ? '' : fnamemodify(bufname, ':p'),
         \}
 endfunction
 
@@ -527,14 +539,14 @@ function! coc#util#vim_info()
   return {
         \ 'apiversion': s:vim_api_version,
         \ 'mode': mode(),
+        \ 'config': get(g:, 'coc_user_config', {}),
         \ 'floating': has('nvim') && exists('*nvim_open_win') ? v:true : v:false,
         \ 'extensionRoot': coc#util#extension_root(),
         \ 'globalExtensions': get(g:, 'coc_global_extensions', []),
-        \ 'config': get(g:, 'coc_user_config', {}),
-        \ 'pid': coc#util#getpid(),
-        \ 'columns': &columns,
         \ 'lines': &lines,
+        \ 'columns': &columns,
         \ 'cmdheight': &cmdheight,
+        \ 'pid': coc#util#getpid(),
         \ 'filetypeMap': get(g:, 'coc_filetype_map', {}),
         \ 'version': coc#util#version(),
         \ 'completeOpt': &completeopt,
@@ -550,23 +562,26 @@ function! coc#util#vim_info()
         \ 'locationlist': get(g:,'coc_enable_locationlist', 1),
         \ 'progpath': v:progpath,
         \ 'guicursor': &guicursor,
-        \ 'updateHighlight': has('nvim-0.5.0') || exists('*prop_list') ? v:true : v:false,
+        \ 'tabCount': tabpagenr('$'),
+        \ 'updateHighlight': has('nvim-0.5.0') || has('patch-8.1.1719') ? v:true : v:false,
         \ 'vimCommands': get(g:, 'coc_vim_commands', []),
         \ 'sign': exists('*sign_place') && exists('*sign_unplace'),
         \ 'textprop': has('textprop') && has('patch-8.1.1719') && !has('nvim') ? v:true : v:false,
         \ 'dialog': has('nvim-0.4.0') || has('patch-8.2.0750') ? v:true : v:false,
+        \ 'semanticHighlights': coc#util#semantic_hlgroups()
         \}
 endfunction
 
-function! coc#util#highlight_options()
+function! coc#util#all_state()
   return {
-        \ 'colorscheme': get(g:, 'colors_name', ''),
-        \ 'background': &background,
-        \ 'runtimepath': join(globpath(&runtimepath, '', 0, 1), ','),
-        \}
+        \ 'bufnr': bufnr('%'),
+        \ 'winid': win_getid(),
+        \ 'bufnrs': map(getbufinfo({'bufloaded': 1}),'v:val["bufnr"]'),
+        \ 'winids': map(getwininfo(),'v:val["winid"]'),
+        \ }
 endfunction
 
-function! coc#util#set_lines(bufnr, changedtick, original, replacement, start, end) abort
+function! coc#util#set_lines(bufnr, changedtick, original, replacement, start, end, changes) abort
   if !bufloaded(a:bufnr)
     return
   endif
@@ -590,7 +605,14 @@ function! coc#util#set_lines(bufnr, changedtick, original, replacement, start, e
       endif
     endif
   endif
-  call coc#compat#buf_set_lines(a:bufnr, a:start, a:end, a:replacement)
+  if exists('*nvim_buf_set_text') && !empty(a:changes) && len(a:changes) < 200
+    for item in a:changes
+      let lines = nvim_buf_get_lines(a:bufnr, 0, -1, v:false)
+      call nvim_buf_set_text(a:bufnr, item[1], item[2], item[3], item[4], item[0])
+    endfor
+  else
+    call coc#compat#buf_set_lines(a:bufnr, a:start, a:end, a:replacement)
+  endif
 endfunction
 
 function! coc#util#change_lines(bufnr, list) abort
@@ -617,7 +639,7 @@ endfunction
 
 " used by vim
 function! coc#util#get_buf_lines(bufnr, changedtick)
-  if !bufloaded(a:bufnr) 
+  if !bufloaded(a:bufnr)
     return v:null
   endif
   let changedtick = getbufvar(a:bufnr, 'changedtick')
@@ -633,6 +655,7 @@ endfunction
 " used for TextChangedI with InsertCharPre
 function! coc#util#get_changeinfo()
   return {
+        \ 'bufnr': bufnr('%'),
         \ 'lnum': line('.'),
         \ 'line': getline('.'),
         \ 'changedtick': b:changedtick,
@@ -880,15 +903,49 @@ endfunction
 
 " get tabsize & expandtab option
 function! coc#util#get_format_opts(bufnr) abort
-  if a:bufnr && bufloaded(a:bufnr)
-    let tabsize = getbufvar(a:bufnr, '&shiftwidth')
-    if tabsize == 0
-      let tabsize = getbufvar(a:bufnr, '&tabstop')
-    endif
-    return [tabsize, getbufvar(a:bufnr, '&expandtab')]
+  let bufnr = a:bufnr && bufloaded(a:bufnr) ? a:bufnr : bufnr('%')
+  let tabsize = getbufvar(bufnr, '&shiftwidth')
+  if tabsize == 0
+    let tabsize = getbufvar(bufnr, '&tabstop')
   endif
-  let tabsize = &shiftwidth == 0 ? &tabstop : &shiftwidth
-  return [tabsize, &expandtab]
+  return {
+      \ 'tabsize': tabsize,
+      \ 'expandtab': getbufvar(bufnr, '&expandtab'),
+      \ 'insertFinalNewline': getbufvar(bufnr, '&eol'),
+      \ 'trimTrailingWhitespace': getbufvar(bufnr, 'coc_trim_trailing_whitespace', 0),
+      \ 'trimFinalNewlines': getbufvar(bufnr, 'coc_trim_final_newlines', 0)
+      \ }
+endfunction
+
+function! coc#util#get_editoroption(winid) abort
+  if has('nvim') && exists('*nvim_win_get_config')
+    " avoid float window
+    let config = nvim_win_get_config(a:winid)
+    if !empty(get(config, 'relative', ''))
+      return v:null
+    endif
+  endif
+  let info = getwininfo(a:winid)[0]
+  let bufnr = info['bufnr']
+  let buftype = getbufvar(bufnr, '&buftype')
+  " avoid window for other purpose.
+  if buftype !=# '' && buftype !=# 'acwrite'
+    return v:null
+  endif
+  let tabSize = getbufvar(bufnr, '&shiftwidth')
+  if tabSize == 0
+    let tabSize = getbufvar(bufnr, '&tabstop')
+  endif
+  return {
+        \ 'bufnr': bufnr,
+        \ 'winid': a:winid,
+        \ 'winids': map(getwininfo(), 'v:val["winid"]'),
+        \ 'tabpagenr': info['tabnr'],
+        \ 'winnr': winnr(),
+        \ 'visibleRanges': s:visible_ranges(a:winid),
+        \ 'tabSize': tabSize,
+        \ 'insertSpaces': getbufvar(bufnr, '&expandtab') ? v:true : v:false
+        \ }
 endfunction
 
 " Get indentkeys for indent on TextChangedP, consider = for word indent only.
@@ -900,4 +957,35 @@ function! coc#util#get_indentkeys() abort
     return ''
   endif
   return &indentkeys
+endfunction
+
+function! s:visible_ranges(winid) abort
+  let info = getwininfo(a:winid)[0]
+  let res = []
+  if !has_key(info, 'topline') || !has_key(info, 'botline')
+    return res
+  endif
+  let begin = 0
+  let curr = info['topline']
+  let max = info['botline']
+  if win_getid() != a:winid
+    return [[curr, max]]
+  endif
+  while curr <= max
+    let closedend = foldclosedend(curr)
+    if closedend == -1
+      let begin = begin == 0 ? curr : begin
+      if curr == max
+        call add(res, [begin, curr])
+      endif
+      let curr = curr + 1
+    else
+      if begin != 0
+        call add(res, [begin, curr - 1])
+        let begin = closedend + 1
+      endif
+      let curr = closedend + 1
+    endif
+  endwhile
+  return res
 endfunction

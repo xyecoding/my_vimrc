@@ -53,11 +53,12 @@ endfunction
 " - borderhighlight: (optional) should be array for border highlights,
 "   highlight all borders with first value.
 " - close: (optional) show close button when is 1.
+" - highlights: (optional) highlight items.
 " - buttons: (optional) array of button text for create buttons at bottom.
 " - codes: (optional) list of CodeBlock.
-" - winblend: winblend option for float window, neovim only.
-" - shadow: use shadow as border style, neovim only.
-" - focusable: neovim only, default to true.
+" - winblend: (optional) winblend option for float window, neovim only.
+" - shadow:  (optional) use shadow as border style, neovim only.
+" - focusable:  (optional) neovim only, default to true.
 function! coc#float#create_float_win(winid, bufnr, config) abort
   let lines = get(a:config, 'lines', v:null)
   let bufnr = coc#float#create_buf(a:bufnr, lines, 'hide')
@@ -1317,6 +1318,7 @@ function! coc#float#create_menu(lines, config) abort
     \ 'maxWidth': get(a:config, 'maxWidth', 80),
     \ 'maxHeight': get(a:config, 'maxHeight', 80),
     \ 'border': [1, 1, 1, 1],
+    \ 'highlights': get(a:config, 'highlights', []),
     \ 'relative': 'cursor',
     \ }
   if s:is_vim

@@ -9,6 +9,7 @@ let s:is_vim = !has('nvim')
 let s:error_sign = get(g:, 'coc_status_error_sign', has('mac') ? '❌ ' : 'E')
 let s:warning_sign = get(g:, 'coc_status_warning_sign', has('mac') ? '⚠️ ' : 'W')
 let s:select_api = exists('*nvim_select_popupmenu_item')
+let s:complete_info_api = exists('*complete_info')
 let s:callbacks = {}
 
 function! coc#expandable() abort
@@ -41,10 +42,19 @@ function! coc#on_enter()
 endfunction
 
 function! coc#_insert_key(method, key, ...) abort
+  let prefix = ''
   if get(a:, 1, 1)
-    call coc#_cancel()
+    if pumvisible()
+      call coc#rpc#notify('CocAutocmd', ['ClosePum'])
+      if has('nvim-0.6.0') || has('patch-8.2.3389')
+        let prefix = "\<C-x>\<C-z>"
+      else
+        let g:coc_disable_space_report = 1
+        let prefix = "\<space>\<bs>"
+      endif
+    endif
   endif
-  return "\<c-r>=coc#rpc#".a:method."('doKeymap', ['".a:key."'])\<CR>"
+  return prefix."\<c-r>=coc#rpc#".a:method."('doKeymap', ['".a:key."'])\<CR>"
 endfunction
 
 function! coc#_complete() abort
@@ -79,7 +89,7 @@ function! coc#_select_confirm() abort
   endif
   let selected = complete_info()['selected']
   if selected != -1
-     return "\<C-y>"
+    return "\<C-y>"
   elseif pumvisible()
     return "\<down>\<C-y>"
   endif
@@ -91,17 +101,28 @@ function! coc#_selected()
   return coc#rpc#request('hasSelected', [])
 endfunction
 
+" Deprecated
 function! coc#_hide() abort
-  if !pumvisible() | return | endif
-  call feedkeys("\<C-e>", 'in')
+  if pumvisible()
+    " Make input as it is, it's not possible by `<C-e>` and `<C-p>`
+    call coc#rpc#notify('CocAutocmd', ['ClosePum'])
+    call feedkeys("\<C-x>\<C-z>", 'in')
+  endif
 endfunction
 
 function! coc#_cancel()
   " hack for close pum
+  " Use of <C-e> could cause bad insert when cursor just moved.
   if pumvisible()
-    let g:coc#_context = {'start': 0, 'preselect': -1,'candidates': []}
-    call feedkeys("\<Plug>CocRefresh", 'i')
-    call coc#rpc#notify('stopCompletion', [])
+    call coc#rpc#notify('CocAutocmd', ['ClosePum'])
+    if has('nvim-0.6.0') || has('patch-8.2.3389')
+      call feedkeys("\<C-x>\<C-z>", 'in')
+    elseif exists('*complete_info') && get(complete_info(['selected']), 'selected', -1) == -1
+      call feedkeys("\<C-e>", 'in')
+    else
+      let g:coc_disable_space_report = 1
+      call feedkeys("\<space>\<bs>", 'in')
+    endif
   endif
 endfunction
 
@@ -212,6 +233,7 @@ function! coc#complete_indent() abort
   let l:curpos[4] += l:shift
   call cursor(l:curpos[1:])
   if l:shift != 0
-    call coc#_cancel()
+    return 1
   endif
+  return 0
 endfunction
