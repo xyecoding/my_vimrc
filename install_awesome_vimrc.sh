@@ -100,7 +100,7 @@ echo "alias cbg='cd ~/myBlog'" >>~/.bashrc
 echo "alias cpp='cd ~/mypaper'" >>~/.bashrc
 
 echo "alias cvh='cd ~/.vim_runtime'" >>~/.bashrc
-echo "alias csn='cd ~/.vim_runtime/my_plugins/vim-snippets/UltiSnips'" >>~/.bashrc
+echo "alias csn='cd ~/.vim_runtime/my_plugins_non_forked/vim-snippets/UltiSnips'" >>~/.bashrc
 
 echo "alias vvp='vi ~/.vim_runtime/vimrcs/my_plungins.vim'" >>~/.bashrc
 echo "alias vvi='vi ~/.vim_runtime/install_awesome_vimrc.sh'" >>~/.bashrc
