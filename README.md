@@ -46,3 +46,11 @@ Just do following:
 1.  `latexindent.pl` use `"\t"` as the default indent char, which conflicts with vim-indent-guide.
     To change the default indent char of `latexindent.pl`, the 147 line of
     `~/anaconda3/bin/LatexIndent/defaultSettings.yaml` is changed into `defaultIndent:" "`.
+2.  To restrict the number of chars contained in a line, one should allow `linebreak` in latexindent.pl.
+    To do this, First, add `-m` to the `args` in `neoformat/autoload/neoformat/formatters/tex.vim`.
+    Secondly, change the 513 line in file `~/anaconda3/bin/LatexIndent/defaultSettings.yaml` to set
+    the number of columns.
+3.  [The document of latexindent
+    ](https://ctan.math.illinois.edu/support/latexindent/documentation/latexindent.pdf)
+    says that latexindent allows multiple spaces to single. However, my latexindent does not acheive
+    that correctly, even when I set `multipleSpacesToSingle: 1`.
