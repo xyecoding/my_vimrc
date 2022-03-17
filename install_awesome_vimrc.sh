@@ -60,7 +60,7 @@ echo "stty -ixon" >>~/.bashrc
 echo -e "\033[31m installing formate of different type of filse used by vim-autoformat \033[0m"
 ~/anaconda3/bin/conda install latexindent.pl -c conda-forge
 mv ~/anaconda3/bin/LatexIndent/defaultSettings.yaml ~/anaconda3/bin/LatexIndent/defaultSettings.yaml_b
-ln -s ~/.vim_runtime/vimrcs/defaultSettings.yaml ~/anaconda3/bin/LatexIndent/defaultSettings.yaml
+ln -s ~/.vim_runtime/defaultSettings.yaml ~/anaconda3/bin/LatexIndent/defaultSettings.yaml
 
 sudo apt install golang-go -y
 export GO111MODULE=on
