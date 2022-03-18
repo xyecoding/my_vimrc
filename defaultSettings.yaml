@@ -508,7 +508,7 @@ modifyLineBreaks:
       betterFullStop: 0
       exclamationMark: 1
       questionMark: 1
-      other: "\.\ (?=[A-Z])"
+      other: "\.\ +(?=[A-Z])"
   textWrapOptions:
     columns: 80
     multipleSpacesToSingle: 1
