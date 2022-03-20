@@ -282,4 +282,16 @@ let g:neoformat_basic_format_retab = 1
 " Enable trimmming of trailing whitespace
 let g:neoformat_basic_format_trim = 1
 " let g:neoformat_verbose = 1
-"
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"vim-reveal
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:reveal_root_path = 'your-reveal.js-path' " '$HOME/reveal.js/' will be used if not specified.
+let g:reveal_config = {
+            \'filename': 'reveal',
+            \'key1': 'value1',
+            \'key2': 'value2'}
+
+
+
