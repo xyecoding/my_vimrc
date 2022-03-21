@@ -1,9 +1,8 @@
 INFO:  latexindent.pl version 3.16, 2022-03-13, a script to indent .tex files
        latexindent.pl lives here: /home/yexiang/anaconda3/bin/
-       Mon Mar 21 10:55:15 2022
+       Mon Mar 21 16:23:12 2022
        Filename: my_file.tex
 INFO:  Processing switches:
-       -l|--localSettings: Read localSettings YAML file
        -m|--modifylinebreaks: modify line breaks
 INFO:  Directory for backup files and indent.log: .
 INFO:  Perl modules are being loaded from the following directories:
@@ -23,18 +22,6 @@ INFO:  YAML settings read: indentconfig.yaml or .indentconfig.yaml
        Home directory is /home/yexiang (didn't find either indentconfig.yaml or .indentconfig.yaml)
        To specify user settings you would put indentconfig.yaml here: /home/yexiang/indentconfig.yaml
        Alternatively, you can use the hidden file .indentconfig.yaml as: /home/yexiang/.indentconfig.yaml
-INFO:  YAML settings read: -l switch
-       Adding xy_mps1.yaml to YAML read paths
-INFO:  YAML settings, reading from the following files:
-       Reading USER settings from xy_mps1.yaml
-       ---
-       modifyLineBreaks:
-         oneSentencePerLine:
-           manipulateSentences: '1'
-         textWrapOptions:
-           columns: '80'
-           multipleSpacesToSingle: '1'
-
 INFO:  Phase 1: searching for objects
        No objects found.
 INFO:  Phase 2: finding surrounding indentation

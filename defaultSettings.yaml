@@ -490,7 +490,7 @@ modifyLineBreaks:
   preserveBlankLines: 1
   condenseMultipleBlankLinesInto: 1
   oneSentencePerLine:
-    manipulateSentences: 0
+    manipulateSentences: 1
     removeSentenceLineBreaks: 0
     textWrapSentences: 0 # setting to 1 disables main textWrap routine
     sentenceIndent: ""
