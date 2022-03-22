@@ -6,7 +6,7 @@ endfunction
 function! neoformat#formatters#markdown#prettier() abort
     return {
                 \ 'exe': 'prettier',
-                \ 'args': ['--stdin-filepath', '"%:p"'],
+                \ 'args': ['--stdin-filepath', '--no-bracket-spacing' ,'"%:p"'],
                 \ 'stdin': 1,
                 \ 'try_node_exe': 1,
                 \ }
