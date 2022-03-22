@@ -36,24 +36,29 @@ Just do following:
 ### Notations
 
 1.  When more than one tex files are edited all using vimtex, the pdf can not be
-    refreshed when the tex file is saved. To overcome this, the source file of vimtex is
-    modified `vimtex/autoload/vimtex/view.vim`.
-    line 57 `call b:vimtex.viewer.compiler_callback(l:outfile)` is changed into `VimtexView`.
-    **However, a more elegant method is to enable the `Auto-refresh` setting in qpdfview.**
+    refreshed when the tex file is saved. To overcome this, the source file of
+    vimtex is modified `vimtex/autoload/vimtex/view.vim`. line 57
+    `call b:vimtex.viewer.compiler_callback(l:outfile)` is changed into
+    `VimtexView`. **However, a more elegant method is to enable the
+    `Auto-refresh` setting in qpdfview.**
 
 # Neoformat
 
-1.  `latexindent.pl` use `"\t"` as the default indent char, which conflicts with vim-indent-guide.
-    To change the default indent char of `latexindent.pl`, the 147 line of
-    `~/anaconda3/bin/LatexIndent/defaultSettings.yaml` is changed into `defaultIndent:" "`.
-2.  To restrict the number of chars contained in a line, one should allow `linebreak` in latexindent.pl.
-    To do this, First, add `-m` to the `args` in `neoformat/autoload/neoformat/formatters/tex.vim`.
-    Secondly, change the 513 line in file `~/anaconda3/bin/LatexIndent/defaultSettings.yaml` to set
-    the number of columns.
-3.  [The document of latexindent
-    ](https://ctan.math.illinois.edu/support/latexindent/documentation/latexindent.pdf)
-    says that latexindent allows multiple spaces to single. However, my latexindent does not acheive
-    that correctly, even when I set `multipleSpacesToSingle: 1`.
-4.  When I change the option for some formators in neoformat, errors occur in most cases. For example,
-    When I add `--no-bracket-spacing` for `prettier`, I can not change anything for markdown files.
-    Thus, I turn to use `vim-autoformt`.
+1.  `latexindent.pl` use `"\t"` as the default indent char, which conflicts with
+    vim-indent-guide. To change the default indent char of `latexindent.pl`, the
+    147 line of `~/anaconda3/bin/LatexIndent/defaultSettings.yaml` is changed
+    into `defaultIndent:" "`.
+2.  To restrict the number of chars contained in a line, one should allow
+    `linebreak` in latexindent.pl. To do this, First, add `-m` to the `args` in
+    `neoformat/autoload/neoformat/formatters/tex.vim`. Secondly, change the 513
+    line in file `~/anaconda3/bin/LatexIndent/defaultSettings.yaml` to set the
+    number of columns.
+3.  [The document of latexindent ](https://ctan.math.illinois.edu/support/latexindent/documentation/latexindent.pdf)
+    says that latexindent allows multiple spaces to single. However, my
+    latexindent does not acheive that correctly, even when I set
+    `multipleSpacesToSingle: 1`.
+4.  The position of args is important. When I set args
+    `'args': ['--no-bracket-spacing --stdin-filepath', '"%:p"']` for markdown
+    files, it works correctly. However, when I set it as
+    `'args': ['--stdin-filepath --no-bracket-spacing', '"%:p"']`, it does not
+    run correctly.

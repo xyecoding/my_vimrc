@@ -241,37 +241,38 @@ let g:indentLine_concealcursor = ''
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "autoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-au BufWrite * :Autoformat
-let g:formatdef_remark_markdown = '"~/node/bin/remark --use remark-prettier --silent --no-color"'
-let g:formatdef_prettier = '"prettier --stdin-filepath ".expand("%:p")." --tab-width=".shiftwidth()."  --print-width 80 --prose-wrap always --no-bracket-spacing"'
-let g:formatters_markdown = ['prettier', 'stylelint']
-
-let g:formatdef_shfmt = '"~/go/bin/shfmt -i ".(&expandtab ? shiftwidth() : "0")'
-let g:formatters_sh = ['shfmt']
-let g:formatdef_latexindent = '"~/anaconda3/bin/latexindent.pl -"'
-let g:formatters_snippets = ['shfmt']
+" au BufWrite * :Autoformat
+" " let g:formatdef_remark_markdown = '"~/node/bin/remark --use remark-prettier --silent --no-color"'
+" let g:formatdef_prettier = '"prettier --stdin-filepath ".expand("%:p")." --tab-width=".shiftwidth()."  --print-width 80 --prose-wrap always --no-bracket-spacing"'
+" let g:formatters_markdown = ['prettier', 'stylelint']
+"
+" let g:formatdef_shfmt = '"~/go/bin/shfmt -i ".(&expandtab ? shiftwidth() : "0")'
+" let g:formatters_sh = ['shfmt']
+"
+" let g:formatdef_latexindent = '"latexindent.pl -m -"'
+" let g:formatters_tex = ['latexindent']
+" let g:formatters_snippets = ['shfmt']
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "neoformat
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" augroup fmt
-"     autocmd!
-"     autocmd BufWritePre * Neoformat
-" augroup END
-"
-"
-" " Enable alignment
-" let g:neoformat_basic_format_align = 1
-" autocmd FileType snippets let g:neoformat_basic_format_align=0
-"
-" " Enable tab to spaces conversion
-" let g:neoformat_basic_format_retab = 1
-"
-" " Enable trimmming of trailing whitespace
-" let g:neoformat_basic_format_trim = 1
-" " let g:neoformat_verbose = 1
-"
+augroup fmt
+    autocmd!
+    autocmd BufWritePre * Neoformat
+augroup END
+
+" Enable alignment
+let g:neoformat_basic_format_align = 1
+autocmd FileType snippets let g:neoformat_basic_format_align=0
+
+" Enable tab to spaces conversion
+let g:neoformat_basic_format_retab = 1
+
+" Enable trimmming of trailing whitespace
+let g:neoformat_basic_format_trim = 1
+" let g:neoformat_verbose = 1
+
 
 
 
