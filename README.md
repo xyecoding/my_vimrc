@@ -25,9 +25,9 @@ git clone git@github.com:xyegithub/my_vimrc.git ~/.vim_runtime
 
 Just do following:
 
-- Remove `~/.vim_runtime`
+-   Remove `~/.vim_runtime`
 
-- Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
+-   Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
 
 # Some modifies or notations about plugins
 
@@ -54,3 +54,6 @@ Just do following:
     ](https://ctan.math.illinois.edu/support/latexindent/documentation/latexindent.pdf)
     says that latexindent allows multiple spaces to single. However, my latexindent does not acheive
     that correctly, even when I set `multipleSpacesToSingle: 1`.
+4.  When I change the option for some formators in neoformat, errors occur in most cases. For example,
+    When I add `--no-bracket-spacing` for `prettier`, I can not change anything for markdown files.
+    Thus, I turn to use `vim-autoformt`.
