@@ -40,6 +40,10 @@ highlight SpellBad ctermfg=009 ctermbg=012 guifg=black guibg=lightgray gui=None
 
 filetype plugin on
 
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 " nmap <tab> i<CR><Esc>
 nmap ss :j2<CR>
 nmap \d :bd<CR>
