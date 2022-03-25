@@ -141,10 +141,12 @@ snippet enum "Enumerate" bi
 \end{enumerate}
 endsnippet
 
-snippet item "Itemize" bi
+snippet sitems "Itemize" Abi
 \begin{itemize}
-	\item ${0:${VISUAL}}
+	\item ${1:${VISUAL}}
+
 \end{itemize}
+$0
 endsnippet
 
 snippet case "cases" bi
@@ -308,8 +310,10 @@ snippet rm "Text" wi
 \rm{${1:${VISUAL}}}$0
 endsnippet
 
-snippet itm "Item" wi
-\item ${0:${VISUAL}}
+snippet sitem "Item" Awi
+\item ${1:${VISUAL}}
+
+$0
 endsnippet
 
 snippet ceil "Ceil" w
@@ -612,3 +616,9 @@ snippet sfig "figure env" A
 \\end{figure}
 ${0}
 endsnippet
+
+
+snippet stc "textcolor env" A
+\\textcolor{${1:color}}{$2} ${0}
+endsnippet
+
