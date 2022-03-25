@@ -49,7 +49,7 @@ echo -e "\033[31m pip install pyvim and neovim-remote \033[0m"
 
 cd ~/.vim_runtime
 
-cp ~/.vim_runtime/.vimrc ~/
+ln -s ~/.vim_runtime/.vimrc ~/.vimrc
 
 mkdir -p ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
