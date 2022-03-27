@@ -7,7 +7,7 @@ call plug#begin('~/.vim_runtime/my_plugins')
 Plug 'git@github.com:dkarter/bullets.vim.git'
 Plug 'git@github.com:preservim/nerdcommenter.git'
 
-
+Plug 'git@github.com:dense-analysis/ale.git'
 Plug 'git@github.com:ctrlpvim/ctrlp.vim.git'
 " Plug 'git@github.com:blindFS/vim-reveal.git'
 " Plug 'git@github.com:kien/rainbow_parentheses.vim.git'
