@@ -298,17 +298,73 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 let g:ale_linters = {
             \   'javascript': ['eslint'],
             \   'python': ['flake8'],
-            \   'go': ['go', 'golint', 'errcheck']
+            \   'go': ['go', 'golint', 'errcheck'],
+            \   'latex' : ['chktex', 'lacheck']
             \}
-
-nmap <silent> <leader>a <Plug>(ale_next_wrap)
 
 " Disabling highlighting
 let g:ale_set_highlights = 0
+" Set this. Airline will handle the rest.
+" let g:airline#extensions#ale#enabled = 1
+"
 
 " Only run linting when saving the file
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"dense-analysis/ale
+let g:ale_sign_column_always = 1                    "符号槽始终开启
+let g:ale_sign_error = '✘'                          "错误提示符。
+let g:ale_sign_warning = '!'                        "警告提示符。
+let g:ale_echo_msg_error_str = 'E'                  "错误提示符。
+let g:ale_echo_msg_warning_str = 'W'                "警告提示符。
+let g:airline#extensions#ale#enable = 1             "将ale信息在airline中显示。
+"dense-analysis/ale
+"跳转到上一个错误或警告信息。
+nmap <silent> <c-j> <Plug>(ale_previous_wrap)
+"跳转到下一个错误或警告信息。
+nmap <silent> <c-k> <Plug>(ale_next_wrap)
+let b:ale_fixers = ['prettier', 'eslint']
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-ariline and the theme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:airline_section_b =
+let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
+let g:airline#extensions#quickfix#location_text = 'Location'
+" let g:airline_section_b = '%-0.10{getcwd()}'
+" let g:airline_section_c = '%t'
+let g:airline_theme='dark'
+function! s:update_highlights()
+    hi CursorLine ctermbg=none guibg=NONE
+    hi VertSplit ctermbg=none guibg=NONE
+endfunction
+autocmd User AirlineAfterTheme call s:update_highlights()
+let g:airline_statusline_ontop = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 1
+let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#alt_sep = 1
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#tabline#show_tab_count = 2
+let g:airline#extensions#tabline#exclude_preview = 1
+let g:airline#extensions#tabline#tab_nr_type = 2
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline#extensions#tabline#show_tab_type = 1
+" let g:airline#extensions#tabline#buf_label_first = 1
+" let g:airline#extensions#tabline#buffers_label = 'b'
+let airline#extensions#tabline#current_first = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 
+let g:airline#extensions#vimtex#enabled = 1
+let g:airline#extensions#vimtex#left = "{"
+let g:airline#extensions#vimtex#right = "}"
+let g:airline#extensions#vimtex#main = ""
+let g:airline#extensions#vimtex#sub_main = "m"
+let g:airline#extensions#vimtex#sub_local = "l"
+let g:airline#extensions#vimtex#compiled = "c₁"
+let g:airline#extensions#vimtex#continuous = "c"
+let g:airline#extensions#vimtex#viewer = "v"
+let g:airline#extensions#vimtex#wordcount = 1
