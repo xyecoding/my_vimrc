@@ -274,6 +274,23 @@ let g:neoformat_basic_format_trim = 1
 " let g:neoformat_verbose = 1
 
 
+""""""""""""""""""""""""""""""
+" => CTRL-P
+""""""""""""""""""""""""""""""
+let g:ctrlp_working_path_mode = 0
+
+" Quickly find and open a file in the current working directory
+" let g:ctrlp_map = '<C-f>'
+let g:ctrlp_map = '<leader>j'
+" map <leader>j :CtrlP<cr>
+
+" Quickly find and open a buffer
+map <leader>k :CtrlPBuffer<cr>
+map <leader>l :CtrlPMRU<cr>
+
+let g:ctrlp_max_height = 20
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+
 
 
 

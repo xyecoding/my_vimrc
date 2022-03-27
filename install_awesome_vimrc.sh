@@ -21,7 +21,7 @@ echo -e "\033[31m installing tmux \033[0m"
 sudo apt install tmux -y
 
 echo -e "\033[31m config tmux \033[0m"
-cp ~/.vim_runtime/.tmux.conf ~
+ln -s ~/.vim_runtime/.tmux.conf ~/.tmux.conf
 
 # echo -e "\033[31m installing miktex \033[0m"
 # sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D6BC243565B2087BC3F897C9277A7293F59E4889
