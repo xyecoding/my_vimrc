@@ -367,4 +367,4 @@ let g:airline#extensions#vimtex#sub_local = "l"
 let g:airline#extensions#vimtex#compiled = "c₁"
 let g:airline#extensions#vimtex#continuous = "c"
 let g:airline#extensions#vimtex#viewer = "v"
-let g:airline#extensions#vimtex#wordcount = 1
+let g:airline#extensions#vimtex#wordcount = 0
