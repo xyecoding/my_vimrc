@@ -354,7 +354,7 @@ let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#show_tab_type = 1
 " let g:airline#extensions#tabline#buf_label_first = 1
 " let g:airline#extensions#tabline#buffers_label = 'b'
-let airline#extensions#tabline#current_first = 1
+let airline#extensions#tabline#current_first = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 
