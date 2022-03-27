@@ -368,3 +368,16 @@ let g:airline#extensions#vimtex#compiled = "c₁"
 let g:airline#extensions#vimtex#continuous = "c"
 let g:airline#extensions#vimtex#viewer = "v"
 let g:airline#extensions#vimtex#wordcount = 0
+
+
+let g:airline#extensions#ale#enabled = 1
+" let airline#extensions#ale#warning_symbol = 'W:'
+let airline#extensions#ale#show_line_numbers = 1
+" let airline#extensions#ale#open_lnum_symbol = '(L'
+" let airline#extensions#ale#close_lnum_symbol = ')'
+
+let g:airline#extensions#coc#enabled = 1
+g:airline#extensions#coc#show_coc_status = 1
+
+let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+let g:airline#extensions#wordcount#enabled = 1
