@@ -24,6 +24,7 @@ Plug 'git@github.com:lervag/vimtex.git'
 Plug 'git@github.com:neoclide/coc.nvim.git', {'branch': 'release'}
 Plug 'git@github.com:preservim/nerdtree.git'
 Plug 'git@github.com:preservim/vim-markdown.git'
+" Plug 'git@github.com:vim-ctrlspace/vim-ctrlspace.git'
 Plug 'git@github.com:SirVer/ultisnips.git'
 Plug 'git@github.com:honza/vim-snippets.git'
 call plug#end()

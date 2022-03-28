@@ -357,7 +357,9 @@ let g:airline#extensions#tabline#show_tab_type = 1
 " let g:airline#extensions#tabline#buffers_label = 'b'
 let airline#extensions#tabline#current_first = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamecollapse = 1
+let airline#extensions#tabline#middle_click_preserves_windows = 1
 
 let g:airline#extensions#vimtex#enabled = 1
 let g:airline#extensions#vimtex#left = "{"
@@ -382,3 +384,5 @@ let g:airline#extensions#coc#show_coc_status = 1
 
 let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 let g:airline#extensions#wordcount#enabled = 1
+
+
