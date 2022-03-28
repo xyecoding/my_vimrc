@@ -4,5 +4,6 @@
   "suggest.noselect": true,
   "suggest.enablePreselect": false,
   "coc-actions.hideCursor": false,
-  "coc-actions.showActionKind": true
+  "coc-actions.showActionKind": true,
+  "coc.preferences.useQuickfixForLocations": true
 }
