@@ -299,24 +299,21 @@ let g:ale_linters = {
             \   'javascript': ['eslint'],
             \   'python': ['flake8'],
             \   'go': ['go', 'golint', 'errcheck'],
-            \   'latex' : ['chktex', 'lacheck']
+            \   'tex' : []
             \}
-
+" \   'latex' : ['chktex', 'lacheck']
+let g:ale_linters_explicit = 1
 " Disabling highlighting
 let g:ale_set_highlights = 0
 " Set this. Airline will handle the rest.
-" let g:airline#extensions#ale#enabled = 1
-"
 
 " Only run linting when saving the file
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"dense-analysis/ale
 let g:ale_sign_column_always = 1                    "符号槽始终开启
 let g:ale_sign_error = '✘'                          "错误提示符。
-let g:ale_sign_warning = 'W'                        "警告提示符。
+let g:ale_sign_warning = '!'                        "警告提示符。
 let g:ale_echo_msg_error_str = 'E'                  "错误提示符。
 let g:ale_echo_msg_warning_str = 'W'                "警告提示符。
 let g:airline#extensions#ale#enable = 1             "将ale信息在airline中显示。
@@ -326,6 +323,10 @@ nmap <silent> <c-j> <Plug>(ale_previous_wrap)
 "跳转到下一个错误或警告信息。
 nmap <silent> <c-k> <Plug>(ale_next_wrap)
 let b:ale_fixers = ['prettier', 'eslint']
+
+
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-ariline and the theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

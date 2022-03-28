@@ -3,7 +3,7 @@
 "       This requires that you install https://github.com/amix/vimrc !
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+let g:ale_disable_lsp = 1
 
 """"""""""""""""""""""""""""""
 " => Load pathogen paths
