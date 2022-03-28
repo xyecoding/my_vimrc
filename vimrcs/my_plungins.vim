@@ -344,11 +344,11 @@ autocmd User AirlineAfterTheme call s:update_highlights()
 let g:airline_statusline_ontop = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 1
-let g:airline#extensions#tabline#switch_buffers_and_tabs = 1
+let g:airline#extensions#tabline#switch_buffers_and_tabs = 0
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#alt_sep = 1
-let g:airline#extensions#tabline#show_tabs = 1
-let g:airline#extensions#tabline#show_tab_count = 2
+" let g:airline#extensions#tabline#show_tabs = 1
+" let g:airline#extensions#tabline#show_tab_count = 2
 let g:airline#extensions#tabline#exclude_preview = 1
 let g:airline#extensions#tabline#tab_nr_type = 2
 let g:airline#extensions#tabline#show_tab_nr = 1
@@ -357,7 +357,7 @@ let g:airline#extensions#tabline#show_tab_type = 1
 " let g:airline#extensions#tabline#buffers_label = 'b'
 let airline#extensions#tabline#current_first = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-" let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_nr_show = 0
 let g:airline#extensions#tabline#fnamecollapse = 0
 let airline#extensions#tabline#middle_click_preserves_windows = 1
 
