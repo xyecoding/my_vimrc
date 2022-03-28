@@ -13,7 +13,7 @@ Plug 'git@github.com:jiangmiao/auto-pairs.git'
 " Plug 'git@github.com:blindFS/vim-reveal.git'
 " Plug 'git@github.com:kien/rainbow_parentheses.vim.git'
 " Plug 'git@github.com:arnar/vim-matchopen.git'
-Plug 'git@github.com:sbdchd/neoformat.git'
+" Plug 'git@github.com:sbdchd/neoformat.git'
 " Plug 'git@github.com:vim-pandoc/vim-pandoc.git'
 " Plug 'git@github.com:nathanaelkane/vim-indent-guides.git'
 " Plug 'git@github.com:vim-autoformat/vim-autoformat.git'
@@ -26,7 +26,7 @@ Plug 'git@github.com:preservim/nerdtree.git'
 Plug 'git@github.com:preservim/vim-markdown.git'
 " Plug 'git@github.com:vim-ctrlspace/vim-ctrlspace.git'
 Plug 'git@github.com:SirVer/ultisnips.git'
-Plug 'git@github.com:honza/vim-snippets.git'
+" Plug 'git@github.com:honza/vim-snippets.git'
 call plug#end()
 
 
