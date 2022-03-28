@@ -547,10 +547,6 @@ Built-in configurations:~
 
 	Filter diagnostic message in virtual text by level, default: `null`
 
-*diagnostic.virtualTextAlignRight*
-
-	Make virtual text align to the right of window, default: `false`
-
 *diagnostic.virtualTextWinCol*
 
 	Window column number to align virtual text, default: `null`
@@ -1046,6 +1042,10 @@ Built-in configurations:~
 *cursors.previousKey*
 
 	Key used for jump to previous cursors position, default: `<C-p>`
+
+*cursors.wrapscan*
+
+	Searches wrap around the first or last cursors range, default: `true`
 
 						*coc-config-tree*
 *tree.closedIcon*
@@ -2263,6 +2263,8 @@ Acceptable {action} names for |CocAction()| and |CocActionAsync|.
 	Force refresh diagnostics for special buffer with {bufnr} or all buffers
 	when {bufnr} not exists, returns `v:null` before diagnostics are shown.
 
+	NOTE: Will refresh in any mode.
+
 	Useful when `diagnostic.autoRefresh` is `false`.
 
 "refreshSource" [{source}]				*CocAction('refreshSource')*
@@ -3161,6 +3163,7 @@ When filter mode is activated, type normal character to insert filter input
 and following special keys are supported:
 
 <bs> 	- Delete last filter character when possible.
+<C-h> 	- Delete last filter character when possible.
 <C-u> 	- Clean up filter text.
 <C-p> 	- Navigate to previous filter text (stored on command invoke).
 <C-n> 	- Navigate to next filter text (stored on command invoke).
@@ -3454,7 +3457,8 @@ The mapping expression should be `command:arguments`, available commands:
 	'togglemode'    - toggle between insert and normal mode.
 	'previous'      - move cursor to previous item.
 	'next'          - move cursor to next item.
-	'defaultaction' - do default action for selected items or current item.
+	'defaultaction' - do default action for selected item(s).
+	'chooseaction'  - choose action for selected item(s).
 	'jumpback'      - stop prompt and jump back to original window.
 	'previewtoggle' - toggle preview window, requires preview action exists.
 	'previewup'     - scroll preview window up.
@@ -3471,6 +3475,7 @@ The mapping expression should be `command:arguments`, available commands:
 	'deletebackward' - remove next character.
 	'removetail'     - remove characters afterwards.
 	'removeahead'    - remove character ahead.
+	'removeword'     - remove word before cursor.
 	'insertregister' - insert content from Vim register.
 	'paste'          - append text from system clipboard to prompt.
 'eval'     - append text to prompt from result of VimL expression.

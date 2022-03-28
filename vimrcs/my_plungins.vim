@@ -334,7 +334,7 @@ let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'
 let g:airline#extensions#quickfix#location_text = 'Location'
 " let g:airline_section_b = '%-0.10{getcwd()}'
 " let g:airline_section_c = '%t'
-let g:airline_theme='dark'
+" let g:airline_theme='simple'
 function! s:update_highlights()
     hi CursorLine ctermbg=none guibg=NONE
     hi VertSplit ctermbg=none guibg=NONE

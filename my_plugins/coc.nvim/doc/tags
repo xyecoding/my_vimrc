@@ -365,6 +365,7 @@ colors.filetypes	coc.txt	/*colors.filetypes*
 cursors.cancelKey	coc.txt	/*cursors.cancelKey*
 cursors.nextKey	coc.txt	/*cursors.nextKey*
 cursors.previousKey	coc.txt	/*cursors.previousKey*
+cursors.wrapscan	coc.txt	/*cursors.wrapscan*
 diagnostic.autoRefresh	coc.txt	/*diagnostic.autoRefresh*
 diagnostic.checkCurrentLine	coc.txt	/*diagnostic.checkCurrentLine*
 diagnostic.displayByAle	coc.txt	/*diagnostic.displayByAle*
@@ -391,7 +392,6 @@ diagnostic.separateRelatedInformationAsDiagnostics	coc.txt	/*diagnostic.separate
 diagnostic.signLevel	coc.txt	/*diagnostic.signLevel*
 diagnostic.signPriority	coc.txt	/*diagnostic.signPriority*
 diagnostic.virtualText	coc.txt	/*diagnostic.virtualText*
-diagnostic.virtualTextAlignRight	coc.txt	/*diagnostic.virtualTextAlignRight*
 diagnostic.virtualTextCurrentLineOnly	coc.txt	/*diagnostic.virtualTextCurrentLineOnly*
 diagnostic.virtualTextLevel	coc.txt	/*diagnostic.virtualTextLevel*
 diagnostic.virtualTextLineSeparator	coc.txt	/*diagnostic.virtualTextLineSeparator*

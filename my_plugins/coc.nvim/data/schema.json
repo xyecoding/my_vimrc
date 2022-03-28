@@ -647,7 +647,8 @@
       "type": "number",
       "description": "Priority for diagnostic highlights, works on vim8 and neovim >= 0.6.0",
       "default": 4096,
-      "maximum": 4096
+      "maximum": 4096,
+      "minimum": 110
     },
     "diagnostic.autoRefresh": {
       "type": "boolean",
@@ -719,11 +720,6 @@
       "description": "Filter diagnostic message in virtual text by level",
       "default": null,
       "enum": ["hint", "information", "warning", "error"]
-    },
-    "diagnostic.virtualTextAlignRight": {
-      "type": "boolean",
-      "description": "Make virtual text align to the right of window.",
-      "default": false
     },
     "diagnostic.virtualTextWinCol": {
       "type": ["number", "null"],
@@ -1211,6 +1207,11 @@
       "default": "<C-p>",
       "description": "Key used for jump to previous cursors position."
     },
+    "cursors.wrapscan": {
+      "type": "boolean",
+      "default": true,
+      "description": "Searches wrap around the first or last cursors range."
+    },
     "semanticTokens.filetypes": {
       "type": "array",
       "description": "Filetypes that enable semanticTokens highlighting or [\"*\"] for any filetype",
@@ -1228,7 +1229,7 @@
     "semanticTokens.incrementTypes": {
       "type": "array",
       "description": "Semantic token types that should increase highlight when insert at the start and end position of token.",
-      "default": ["variable", "string"],
+      "default": ["variable", "string", "parameter"],
       "items": {
         "type": "string"
       }
