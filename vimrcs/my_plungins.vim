@@ -311,12 +311,12 @@ let g:ale_set_highlights = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 
-" let g:ale_sign_column_always = 1                    "符号槽始终开启
+let g:ale_sign_column_always = 1                    "符号槽始终开启
 let g:ale_sign_error = '✘'                          "错误提示符。
 let g:ale_sign_warning = 'W'                        "警告提示符。
 let g:ale_echo_msg_error_str = 'E'                  "错误提示符。
 let g:ale_echo_msg_warning_str = 'W'                "警告提示符。
-let g:airline#extensions#ale#enable = 1             "将ale信息在airline中显示。
+" let g:airline#extensions#ale#enable = 1             "将ale信息在airline中显示。
 "dense-analysis/ale
 "跳转到上一个错误或警告信息。
 nmap <silent> <c-j> <Plug>(ale_previous_wrap)
@@ -374,10 +374,10 @@ let g:airline#extensions#vimtex#wordcount = 0
 
 
 let g:airline#extensions#ale#enabled = 1
-" let airline#extensions#ale#warning_symbol = 'W:'
+let airline#extensions#ale#warning_symbol = 'W:'
 let airline#extensions#ale#show_line_numbers = 1
-" let airline#extensions#ale#open_lnum_symbol = '(L'
-" let airline#extensions#ale#close_lnum_symbol = ')'
+let airline#extensions#ale#open_lnum_symbol = '(L'
+let airline#extensions#ale#close_lnum_symbol = ')'
 
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#coc#show_coc_status = 1
