@@ -35,6 +35,8 @@ let g:mkdp_open_ip = ''
 
 " specify browser to open preview page
 " default: ''
+" let g:mkdp_browser = '/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
+" let g:markdown_preview_sync_chrome_path = '/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
 let g:mkdp_browser = ''
 
 " set to 1, echo preview page url in command line when open preview page
@@ -76,7 +78,7 @@ let g:mkdp_preview_options = {
 
 " use a custom markdown style must be absolute path
 " like '/Users/username/markdown.css' or expand('~/markdown.css')
-let g:mkdp_markdown_css = expand('~/.vim_runtime/vimrcs/latex.cs')
+" let g:mkdp_markdown_css = expand('~/.vim_runtime/vimrcs/latex.cs')
 
 " use a custom highlight style must absolute path
 " like '/Users/username/highlight.css' or expand('~/highlight.css')

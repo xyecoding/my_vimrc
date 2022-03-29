@@ -1,8 +1,9 @@
 call plug#begin('~/.vim_runtime/my_plugins')
 
 
-Plug 'git@github.com:iamcco/markdown-preview.nvim.git'
 Plug 'git@github.com:dkarter/bullets.vim.git'
+" Plug 'git@github.com:iamcco/markdown-preview.nvim.git', {'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'git@github.com:iamcco/markdown-preview.nvim.git', { 'do': 'cd app && yarn install'  }
 Plug 'git@github.com:preservim/nerdcommenter.git'
 
 Plug 'git@github.com:vim-airline/vim-airline-themes.git'
