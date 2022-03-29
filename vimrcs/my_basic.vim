@@ -47,4 +47,5 @@ noremap <Right> <Nop>
 " nmap <tab> i<CR><Esc>
 nmap ss :j2<CR>
 nmap \d :bd<CR>
-
+imap <C-L> <Right>
+" imap <C-H> <Left>
