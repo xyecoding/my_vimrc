@@ -46,11 +46,11 @@ au FocusGained,BufEnter * checktime
 let mapleader = ","
 
 " Fast saving
-nmap <leader>w :w!<cr>
+"nmap <leader>w :w!<cr>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+" command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -120,12 +120,12 @@ set t_vb=
 set tm=500
 
 " Properly disable sound on errors on MacVim
-if has("gui_macvim")
-    autocmd GUIEnter * set vb t_vb=
-endif
+"if has("gui_macvim")
+"    autocmd GUIEnter * set vb t_vb=
+"endif
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+"set foldcolumn=1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -139,10 +139,10 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme desert
-catch
-endtry
+" try
+" colorscheme desert
+" catch
+" endtry
 
 set background=dark
 
@@ -248,8 +248,8 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Specify the behavior when switching between buffers
 try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
+    set switchbuf=useopen,usetab,newtab
+    set stal=2
 catch
 endtry
 
@@ -280,10 +280,10 @@ vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
+    nmap <D-j> <M-j>
+    nmap <D-k> <M-k>
+    vmap <D-j> <M-j>
+    vmap <D-k> <M-k>
 endif
 
 " Delete trailing white space on save, useful for some filetypes ;)
