@@ -1,10 +1,12 @@
-INFO:  latexindent.pl version 3.15, 2022-01-21, a script to indent .tex files
+INFO:  latexindent.pl version 3.17, 2022-03-25, a script to indent .tex files
        latexindent.pl lives here: /home/yexiang/anaconda3/bin/
-       Tue Mar 22 17:18:42 2022
+       Tue Mar 29 09:25:15 2022
        Filename: my_file.tex
 INFO:  Processing switches:
+       -l|--localSettings: Read localSettings YAML file
        -m|--modifylinebreaks: modify line breaks
-INFO:  Directory for backup files and indent.log: .
+INFO:  Directory for backup files and indent.log:
+       .
 INFO:  Perl modules are being loaded from the following directories:
        /home/yexiang/anaconda3/lib/perl5/core_perl/FindBin.pm
        /home/yexiang/anaconda3/lib/perl5/vendor_perl/YAML/Tiny.pm
@@ -13,7 +15,7 @@ INFO:  Perl modules are being loaded from the following directories:
        /home/yexiang/anaconda3/lib/perl5/core_perl/Getopt/Long.pm
        /home/yexiang/anaconda3/lib/perl5/vendor_perl/File/HomeDir.pm
 INFO:  LatexIndent perl modules are being loaded from, for example:
-       /home/yexiang/anaconda3/bin/LatexIndent/Document.pm
+       /home/yexiang/anaconda3/lib/perl5/vendor_perl/LatexIndent/Document.pm
 INFO:  YAML settings read: defaultSettings.yaml
        Reading defaultSettings.yaml from /home/yexiang/anaconda3/bin/defaultSettings.yaml
        Reading defaultSettings.yaml (2nd attempt) from /home/yexiang/anaconda3/bin/../../texmf-dist/scripts/latexindent/defaultSettings.yaml
@@ -22,6 +24,18 @@ INFO:  YAML settings read: indentconfig.yaml or .indentconfig.yaml
        Home directory is /home/yexiang (didn't find either indentconfig.yaml or .indentconfig.yaml)
        To specify user settings you would put indentconfig.yaml here: /home/yexiang/indentconfig.yaml
        Alternatively, you can use the hidden file .indentconfig.yaml as: /home/yexiang/.indentconfig.yaml
+INFO:  YAML settings read: -l switch
+       Adding xy_mps1.yaml to YAML read paths
+INFO:  YAML settings, reading from the following files:
+       Reading USER settings from xy_mps1.yaml
+       ---
+       modifyLineBreaks:
+         oneSentencePerLine:
+           manipulateSentences: '1'
+         textWrapOptions:
+           columns: '80'
+           multipleSpacesToSingle: '1'
+
 INFO:  Phase 1: searching for objects
        No objects found.
 INFO:  Phase 2: finding surrounding indentation

@@ -311,7 +311,7 @@ let g:ale_set_highlights = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 
-let g:ale_sign_column_always = 1                    "符号槽始终开启
+" let g:ale_sign_column_always = 1                    "符号槽始终开启
 let g:ale_sign_error = '✘'                          "错误提示符。
 let g:ale_sign_warning = 'W'                        "警告提示符。
 let g:ale_echo_msg_error_str = 'E'                  "错误提示符。
