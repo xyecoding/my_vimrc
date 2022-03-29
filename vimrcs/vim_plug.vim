@@ -1,6 +1,4 @@
 call plug#begin('~/.vim_runtime/my_plugins')
-
-
 Plug 'git@github.com:dkarter/bullets.vim.git'
 " Plug 'git@github.com:iamcco/markdown-preview.nvim.git', {'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'git@github.com:iamcco/markdown-preview.nvim.git', { 'do': 'cd app && yarn install'  }
@@ -19,7 +17,6 @@ Plug 'git@github.com:jiangmiao/auto-pairs.git'
 " Plug 'git@github.com:nathanaelkane/vim-indent-guides.git'
 " Plug 'git@github.com:vim-autoformat/vim-autoformat.git'
 Plug 'git@github.com:tommcdo/vim-exchange.git'
-Plug 'git@github.com:altercation/vim-colors-solarized.git'
 Plug 'git@github.com:Yggdroot/indentLine.git'
 Plug 'git@github.com:lervag/vimtex.git'
 Plug 'git@github.com:neoclide/coc.nvim.git', {'branch': 'release'}
@@ -28,8 +25,15 @@ Plug 'git@github.com:preservim/vim-markdown.git'
 " Plug 'git@github.com:vim-ctrlspace/vim-ctrlspace.git'
 Plug 'git@github.com:SirVer/ultisnips.git'
 " Plug 'git@github.com:honza/vim-snippets.git'
-call plug#end()
 
+
+""""""""""""""""""""""""""""""""""""
+" color  themes
+""""""""""""""""""""""""""""""""""""
+" Plug 'git@github.com:altercation/vim-colors-solarized.git'
+" Plug 'git@github.com:wesgibbs/vim-irblack.git'
+Plug 'git@github.com:vim-scripts/peaksea.git'
+call plug#end()
 
 function! OnVimEnter() abort
     " Run PlugUpdate every week automatically when entering Vim.
