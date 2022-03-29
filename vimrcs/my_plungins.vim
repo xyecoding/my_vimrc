@@ -321,9 +321,9 @@ let g:ale_echo_msg_warning_str = 'W'                "警告提示符。
 " let g:airline#extensions#ale#enable = 1             "将ale信息在airline中显示。
 "dense-analysis/ale
 "跳转到上一个错误或警告信息。
-nmap <silent> <c-j> <Plug>(ale_previous_wrap)
+nmap <silent> <c-u> <Plug>(ale_previous_wrap)
 "跳转到下一个错误或警告信息。
-nmap <silent> <c-k> <Plug>(ale_next_wrap)
+nmap <silent> <c-d> <Plug>(ale_next_wrap)
 let b:ale_fixers = ['prettier', 'eslint']
 
 
