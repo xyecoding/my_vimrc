@@ -54,3 +54,4 @@ imap <C-L> <Right>
 colorscheme peaksea
 " highlight SpellBad ctermfg=009 ctermbg=011 guifg=white guibg=grey
 " highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
+" inoremap jk <esc>
