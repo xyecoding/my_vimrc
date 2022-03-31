@@ -1,4 +1,4 @@
-# defaultSettings.yaml for latexindent.pl, version 3.16, 2022-03-13
+# defaultSettings.yaml for latexindent.pl, version 3.17, 2022-03-25
 #                      a script that aims to
 #                      beautify .tex, .sty, .cls files
 #
@@ -144,6 +144,7 @@ lookForPreamble:
 preambleCommandsBeforeEnvironments: 0
 
 # default value of indentation
+# defaultIndent: "\t"
 defaultIndent: "    "
 
 # remove trailing whitespace from all lines
@@ -487,12 +488,13 @@ dos2unixlinebreaks: 0
 #
 # you can specify settings on a per-name basis
 modifyLineBreaks:
-  preserveBlankLines: 0
+  preserveBlankLines: 1
   condenseMultipleBlankLinesInto: 1
   oneSentencePerLine:
     manipulateSentences: 1
     removeSentenceLineBreaks: 0
-    textWrapSentences: 0 # setting to 1 disables main textWrap routine
+    multipleSpacesToSingle: 1
+    textWrapSentences: 1 # setting to 1 disables main textWrap routine
     sentenceIndent: ""
     sentencesFollow:
       par: 1
@@ -506,13 +508,14 @@ modifyLineBreaks:
     sentencesBeginWith:
       A-Z: 1
       a-z: 0
-      other: 0
+      other: "`"
     sentencesEndWith:
       basicFullStop: 0
-      betterFullStop: 0
+      betterFullStop: 1
       exclamationMark: 1
       questionMark: 1
-      other: "\.\ +(?=[A-Z])"
+      other: 0
+      # other: "\.\ +(?=[A-Z])"
   textWrapOptions:
     columns: 80
     multipleSpacesToSingle: 1
@@ -630,6 +633,40 @@ fineTuning:
   trailingComments:
     notPreceededBy: '(?<!\\)'
   modifyLineBreaks:
-    betterFullStop: '(?:\.\)(?!\h*[a-z]))|(?:(?<!(?:(?:e\.g)|(?:E\.g)|(?:i\.e)|(?:I\.e)|(?:etc))))\.(?!(?:[a-z]|[A-Z]|\-|~|\,|[0-9]))'
+    # betterFullStop: '(?:\.\)(?!\h*[a-z]))|(?:(?<!(?:(?:e\.g)|(?:E\.g)|(?:i\.e)|(?:I\.e)|(?:etc))))\.(?!(?:[a-z]|[A-Z]|\-|~|\,|[0-9]))'
+    # betterFullStop: '(?:\.\)(?!\h*[a-z]))|(?:(?<!(?:(?:e\.g)|(?:E\.g)|(?:i\.e)|(?:I\.e)|(?:etc))))\.(?!(?:[a-z]|[A-Z]|\-|~|\,|[0-9]))'
+    betterFullStop: |-
+      (?x)
+      (?:\.\)(?!\h*(?:,|\.|[a-z])))           # .) not followed by a-z
+           |                                  # OR
+          (?:                                 #
+            (?<!                              # Not *preceeded by*
+              (?:                             #
+                (?:[eE]\.g)                   # e.g
+                |                             #
+                (?:[iI]\.e)                   # i.e
+                |                             #
+                (?:etc)                       # etc
+              )                               #
+            )                                 #
+          )                                   # 
+          \.                                  # .
+          (?!                                 # Not *followed by*
+            (?:                               #
+              [a-zA-Z0-9]                     #
+              |                               #
+              \-                              #
+              |                               #
+              ~                               #
+              |                               #
+              \,                              #
+              |                               #
+              \}                              #  <!---- NEW BIT
+              |                               #
+              \),                             #  <!---- NEW BIT
+              |                               #
+              \)\.                            #  <!---- NEW BIT
+            )                                 #
+          )                                   #
     doubleBackSlash: '\\\\(?:\h*\[\h*\d+\h*[a-zA-Z]+\h*\])?'
     comma: ","

@@ -1,6 +1,0 @@
-modifyLineBreaks:
-  oneSentencePerLine:
-    manipulateSentences: 1
-  textWrapOptions:
-    columns: 80
-    multipleSpacesToSingle: 1
