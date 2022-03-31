@@ -58,6 +58,11 @@ colorscheme peaksea
 " inoremap jk <esc>
 " let g:python3_host_prog='/home/yexiang/anaconda3/bin/python'
 
+
+
+""""""""""""""""""""""""""""""""""""
+" highlight the words the same as the word cursor hold
+""""""""""""""""""""""""""""""""""""
 function! HighlightWordUnderCursor()
     let disabled_ft = ["qf", "fugitive", "nerdtree", "gundo", "diff", "fzf", "floaterm"]
     if &diff || &buftype == "terminal" || index(disabled_ft, &filetype) >= 0
