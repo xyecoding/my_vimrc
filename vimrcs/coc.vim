@@ -4,7 +4,8 @@
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 " let g:coc_global_extensions=['coc-vimtex', 'coc-json','coc-highlight', 'coc-pyright', 'coc-spell-checker', 'coc-sh','coc-markdown-preview-enhanced','coc-css', 'coc-syntax', 'coc-marketplace']
-let g:coc_global_extensions=['coc-json', 'coc-vimlsp', 'coc-sh', 'coc-marketplace', 'coc-actions', 'coc-translator', 'coc-texlab', 'coc-markdownlint']
+let g:coc_global_extensions=['coc-json', 'coc-vimlsp', 'coc-sh', 'coc-marketplace', 'coc-actions', 'coc-translator', 'coc-texlab', 'coc-markdownlint', 'coc-highlight']
+
 " coc-ltex, coc-syntax, coc-markdownlint
 
 set encoding=utf-8
@@ -187,3 +188,4 @@ nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<C
 
 nmap tt <Plug>(coc-translator-p)
 vmap tt <Plug>(coc-translator-pv)
+

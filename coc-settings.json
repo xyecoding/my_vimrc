@@ -5,5 +5,6 @@
   "suggest.enablePreselect": false,
   "coc-actions.hideCursor": false,
   "coc-actions.showActionKind": true,
-  "coc.preferences.useQuickfixForLocations": true
+  "coc.preferences.useQuickfixForLocations": true,
+  "colors.filetypes": ["*"]
 }

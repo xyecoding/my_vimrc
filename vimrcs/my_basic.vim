@@ -37,14 +37,15 @@ set whichwrap=<,>,[,]
 " hi PmenuSel       guifg=#000000     guibg=#cae682     gui=NONE      ctermfg=NONE        ctermbg=NONE        cterm=NONE
 " hi PmenuSbar        guifg=black       guibg=white       gui=NONE      ctermfg=black       ctermbg=white       cterm=NONE
 
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+vnoremap <Up> <Nop>
+vnoremap <Down> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
 " nmap <tab> i<CR><Esc>
 nmap ss :j2<CR>
 nmap \d :bd<CR>
@@ -55,3 +56,4 @@ colorscheme peaksea
 " highlight SpellBad ctermfg=009 ctermbg=011 guifg=white guibg=grey
 " highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 " inoremap jk <esc>
+" let g:python3_host_prog='/home/yexiang/anaconda3/bin/python'
