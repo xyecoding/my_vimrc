@@ -634,7 +634,6 @@ fineTuning:
     notPreceededBy: '(?<!\\)'
   modifyLineBreaks:
     # betterFullStop: '(?:\.\)(?!\h*[a-z]))|(?:(?<!(?:(?:e\.g)|(?:E\.g)|(?:i\.e)|(?:I\.e)|(?:etc))))\.(?!(?:[a-z]|[A-Z]|\-|~|\,|[0-9]))'
-    # betterFullStop: '(?:\.\)(?!\h*[a-z]))|(?:(?<!(?:(?:e\.g)|(?:E\.g)|(?:i\.e)|(?:I\.e)|(?:etc))))\.(?!(?:[a-z]|[A-Z]|\-|~|\,|[0-9]))'
     betterFullStop: |-
       (?x)
       (?:\.\)(?!\h*(?:,|\.|[a-z])))           # .) not followed by a-z
