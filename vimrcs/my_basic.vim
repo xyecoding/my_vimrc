@@ -57,3 +57,22 @@ colorscheme peaksea
 " highlight SpellBad ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 " inoremap jk <esc>
 " let g:python3_host_prog='/home/yexiang/anaconda3/bin/python'
+
+function! HighlightWordUnderCursor()
+    let disabled_ft = ["qf", "fugitive", "nerdtree", "gundo", "diff", "fzf", "floaterm"]
+    if &diff || &buftype == "terminal" || index(disabled_ft, &filetype) >= 0
+        return
+    endif
+    if getline(".")[col(".")-1] !~# '[[:punct:][:blank:]]'
+        hi MatchWord cterm=undercurl  guibg=blue
+        " hi MatchWord cterm=undercurl gui=undercurl guibg=#3b404a
+        exec 'match' 'MatchWord' '/\V\<'.expand('<cword>').'\>/'
+    else
+        match none
+    endif
+endfunction
+
+augroup MatchWord
+    autocmd!
+    autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
+augroup END
