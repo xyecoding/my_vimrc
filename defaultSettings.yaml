@@ -617,6 +617,7 @@ fineTuning:
     name: '(?!@?if[a-zA-Z@]*?\{)@?if[a-zA-Z@]*?'
   commands:
     name: '[+a-zA-Z@\*0-9_\:]+?'
+    # name: '\\label'
   items:
     canBeFollowedBy: '(?:\[[^]]*?\])|(?:<[^>]*?>)'
   keyEqualsValuesBracesBrackets:
