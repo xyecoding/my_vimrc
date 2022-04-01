@@ -50,7 +50,7 @@ vnoremap <Right> <Nop>
 nnoremap ss :j2<CR>
 nnoremap \d :bd<CR>
 inoremap <C-L> <Right>
-inoremap <C-[> <CR><Left>
+inoremap <C-j> <CR><Left>
 " inoremap <C-H> <Left>
 " colorscheme ir_black
 colorscheme peaksea
