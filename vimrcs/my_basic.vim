@@ -8,19 +8,19 @@ set nu
 "      call remote_startserver('VIM')
 "endif
 
-imap   <C-S>   <ESC>:w<CR>
-nmap    <C-S>   :w<CR>
+inoremap   <C-S>   <ESC>:w<CR>
+nnoremap    <C-S>   :w<CR>
 
-imap   <C-Q>   <ESC>:q!<CR>
-nmap    <C-Q>   :q!<CR>
+inoremap   <C-Q>   <ESC>:q!<CR>
+nnoremap    <C-Q>   :q!<CR>
 
-imap   <C-A>   <ESC>:q<CR>
-nmap    <C-A>   :q<CR>
+inoremap   <C-A>   <ESC>:q<CR>
+nnoremap    <C-A>   :q<CR>
 
-imap   <A-,>   <ESC>:bp<CR>
-nmap    <A-,>   :bp<CR>
-imap   <A-.>   <ESC>:bn<CR>
-nmap    <A-.>   :bn<CR>
+inoremap   <A-,>   <ESC>:bp<CR>
+nnoremap    <A-,>   :bp<CR>
+inoremap   <A-.>   <ESC>:bn<CR>
+nnoremap    <A-.>   :bn<CR>
 autocmd BufNewFile,BufRead *.tex,*.md  set spell
 
 set termguicolors
@@ -46,11 +46,12 @@ vnoremap <Up> <Nop>
 vnoremap <Down> <Nop>
 vnoremap <Left> <Nop>
 vnoremap <Right> <Nop>
-" nmap <tab> i<CR><Esc>
-nmap ss :j2<CR>
-nmap \d :bd<CR>
-imap <C-L> <Right>
-" imap <C-H> <Left>
+" nnoremap <tab> i<CR><Esc>
+nnoremap ss :j2<CR>
+nnoremap \d :bd<CR>
+inoremap <C-L> <Right>
+inoremap <C-[> <CR><Left>
+" inoremap <C-H> <Left>
 " colorscheme ir_black
 colorscheme peaksea
 " highlight SpellBad ctermfg=009 ctermbg=011 guifg=white guibg=grey
