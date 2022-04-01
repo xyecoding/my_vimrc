@@ -1,6 +1,6 @@
 {
   "diagnostic.displayByAle": true,
-  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.extensionUpdateCheck": "weekly",
   "suggest.noselect": true,
   "suggest.enablePreselect": false,
   "coc-actions.hideCursor": false,
