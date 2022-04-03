@@ -25,9 +25,9 @@ git clone git@github.com:xyegithub/my_vimrc.git ~/.vim_runtime
 
 Just do following:
 
--   Remove `~/.vim_runtime`
+- Remove `~/.vim_runtime`
 
--   Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
+- Remove any lines that reference `.vim_runtime` in your `~/.vimrc`
 
 # Some modifies or notations about plugins
 
@@ -62,3 +62,5 @@ Just do following:
     files, it works correctly. However, when I set it as
     `'args': ['--stdin-filepath --no-bracket-spacing', '"%:p"']`, it does not
     run correctly.
+5.  .local/share/omf/themes/default/.git/config
+6.  .local/share/omf/repositories
