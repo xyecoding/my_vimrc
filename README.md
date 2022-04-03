@@ -62,5 +62,3 @@ Just do following:
     files, it works correctly. However, when I set it as
     `'args': ['--stdin-filepath --no-bracket-spacing', '"%:p"']`, it does not
     run correctly.
-5.  .local/share/omf/themes/default/.git/config
-6.  .local/share/omf/repositories
