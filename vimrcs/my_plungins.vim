@@ -387,8 +387,9 @@ let airline#extensions#ale#close_lnum_symbol = ')'
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#coc#show_coc_status = 1
 
-let g:airline#extensions#ctrlp#show_adjacent_modes = 1
+" let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 let g:airline#extensions#wordcount#enabled = 1
+let g:airline#extensions#fzf#enabled = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""
@@ -412,6 +413,7 @@ nnoremap tb :TagbarOpenAutoClose<CR>
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
+imap <leader><tab> <plug>(fzf-maps-i)
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
