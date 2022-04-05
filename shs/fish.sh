@@ -18,3 +18,4 @@ omf install ays
 omf install git@github.com:jethrokuan/fzf.git
 ~/anaconda3/bin/conda init fish
 echo "source ~/.vim_runtime/config.fish" >>~/.config/fish/config.fish
+omf install git@github.com:jethrokuan/z.git
