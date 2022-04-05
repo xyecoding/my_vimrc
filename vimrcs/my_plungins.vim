@@ -394,7 +394,7 @@ let g:airline#extensions#wordcount#enabled = 1
 """"""""""""""""""""""""""""""""""""""""""""""
 " undotree
 """"""""""""""""""""""""""""""""""""""""""""""
-nnoremap ut :UndotreeToggle<CR>
+nnoremap <leader>ut :UndotreeToggle<CR>
 " nnoremap th :ThesaurusQueryReplaceCurrentWord<CR>
 """"""""""""""""""""""""""""""""""""""""""""
 " tagbar
