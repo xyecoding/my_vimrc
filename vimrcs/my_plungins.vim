@@ -279,19 +279,19 @@ let g:neoformat_basic_format_trim = 1
 """"""""""""""""""""""""""""""
 " => CTRL-P
 """"""""""""""""""""""""""""""
-let g:ctrlp_working_path_mode = 0
-
-" Quickly find and open a file in the current working directory
-" let g:ctrlp_map = '<C-f>'
-let g:ctrlp_map = '<leader>j'
-" map <leader>j :CtrlP<cr>
-
-" Quickly find and open a buffer
-map <leader>k :CtrlPBuffer<cr>
-map <leader>l :CtrlPMRU<cr>
-
-let g:ctrlp_max_height = 20
-let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+" let g:ctrlp_working_path_mode = 0
+"
+" " Quickly find and open a file in the current working directory
+" " let g:ctrlp_map = '<C-f>'
+" let g:ctrlp_map = '<leader>j'
+" " map <leader>j :CtrlP<cr>
+"
+" " Quickly find and open a buffer
+" map <leader>k :CtrlPBuffer<cr>
+" map <leader>l :CtrlPMRU<cr>
+"
+" let g:ctrlp_max_height = 20
+" let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -390,4 +390,37 @@ let g:airline#extensions#coc#show_coc_status = 1
 let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 let g:airline#extensions#wordcount#enabled = 1
 
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" undotree
+""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap ut :UndotreeToggle<CR>
+" nnoremap th :ThesaurusQueryReplaceCurrentWord<CR>
+""""""""""""""""""""""""""""""""""""""""""""
+" tagbar
+""""""""""""""""""""""""""""""""""""""""""""
+nnoremap tb :TagbarOpenAutoClose<CR>
+
+
+
+
+""""""""""""""""""""""""""""""""""""
+" fzf
+""""""""""""""""""""""""""""""""""""
+" Mapping selecting mappings
+nnoremap <leader><tab> <plug>(fzf-maps-n)
+xnoremap <leader><tab> <plug>(fzf-maps-x)
+onoremap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+inoremap <c-x><c-k> <plug>(fzf-complete-word)
+inoremap <c-x><c-f> <plug>(fzf-complete-path)
+inoremap <c-x><c-l> <plug>(fzf-complete-line)
+
+
+nnoremap <leader>j :Files<cr>
+nnoremap <leader>k :Buffers<cr>
+noremap <leader>l :History<cr>
+noremap <leader>; :History:<cr>
+noremap <leader>h :Snippets<cr>
 

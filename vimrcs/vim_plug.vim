@@ -7,8 +7,10 @@ Plug 'git@github.com:preservim/nerdcommenter.git'
 Plug 'git@github.com:vim-airline/vim-airline-themes.git'
 Plug 'git@github.com:vim-airline/vim-airline.git'
 Plug 'git@github.com:dense-analysis/ale.git'
-Plug 'git@github.com:ctrlpvim/ctrlp.vim.git'
+" Plug 'git@github.com:ctrlpvim/ctrlp.vim.git'
 Plug 'git@github.com:jiangmiao/auto-pairs.git'
+Plug 'git@github.com:junegunn/fzf.git', { 'do': { -> fzf#install() } }
+Plug 'git@github.com:junegunn/fzf.vim.git'
 " Plug 'git@github.com:blindFS/vim-reveal.git'
 " Plug 'git@github.com:kien/rainbow_parentheses.vim.git'
 " Plug 'git@github.com:arnar/vim-matchopen.git'
@@ -25,8 +27,11 @@ Plug 'git@github.com:preservim/vim-markdown.git'
 " Plug 'git@github.com:vim-ctrlspace/vim-ctrlspace.git'
 Plug 'git@github.com:SirVer/ultisnips.git'
 " Plug 'git@github.com:honza/vim-snippets.git'
+" Plug 'git@github.com:Ron89/thesaurus_query.vim.git'
+" Plug 'git@github.com:vim-scripts/taglist.vim.git'
 
-
+Plug 'git@github.com:preservim/tagbar.git'
+Plug 'git@github.com:mbbill/undotree.git'
 """"""""""""""""""""""""""""""""""""
 " color  themes
 """"""""""""""""""""""""""""""""""""

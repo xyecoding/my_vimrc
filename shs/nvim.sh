@@ -11,6 +11,7 @@ ln -s ~/.vim_runtime/.vimrc ~/.vimrc
 
 mkdir -p ~/.config/nvim
 ln -s ~/.vimrc ~/.config/nvim/init.vim
+sudo apt install exuberant-ctags -y
 
 echo -e "\033[31m Disable the stty shortcuts such as ctrl s, for neovim will use them. \033[0m"
 echo "stty -ixon" >>~/.bashrc
