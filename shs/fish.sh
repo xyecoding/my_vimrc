@@ -14,3 +14,7 @@ mv ~/.local/share/omf/repositories ~/.local/share/omf/repositories_b
 ln -s ~/.vim_runtime/setting_files/omf/repositories ~/.local/share/omf/repositories
 mv ~/.local/share/omf/.git/config ~/.local/share/omf/.git/config_b
 ln -s ~/.vim_runtime/setting_files/omf/omf_config ~/.local/share/omf/.git/config
+omf install ays
+omf install git@github.com:jethrokuan/fzf.git
+~/anaconda3/bin/conda init fish
+echo "source ~/.vim_runtime/config.fish" >>~/.config/fish/config.fish
