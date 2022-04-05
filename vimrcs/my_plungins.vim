@@ -408,19 +408,44 @@ nnoremap tb :TagbarOpenAutoClose<CR>
 " fzf
 """"""""""""""""""""""""""""""""""""
 " Mapping selecting mappings
-nnoremap <leader><tab> <plug>(fzf-maps-n)
-xnoremap <leader><tab> <plug>(fzf-maps-x)
-onoremap <leader><tab> <plug>(fzf-maps-o)
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
 
 " Insert mode completion
-inoremap <c-x><c-k> <plug>(fzf-complete-word)
-inoremap <c-x><c-f> <plug>(fzf-complete-path)
-inoremap <c-x><c-l> <plug>(fzf-complete-line)
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 
 nnoremap <leader>j :Files<cr>
 nnoremap <leader>k :Buffers<cr>
-noremap <leader>l :History<cr>
-noremap <leader>; :History:<cr>
-noremap <leader>h :Snippets<cr>
+nnoremap <leader>l :History<cr>
+nnoremap <leader>; :History:<cr>
+nnoremap <leader>h :Snippets<cr>
+
+let g:fzf_preview_window = 'right:40%'
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+function! s:list_buffers()
+    redir => list
+    silent ls
+    redir END
+    return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+    execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+            \ 'source': s:list_buffers(),
+            \ 'sink*': { lines -> s:delete_buffers(lines) },
+            \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+            \ }))
+
+noremap <leader>bd :BD<CR>
+
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
+
 
