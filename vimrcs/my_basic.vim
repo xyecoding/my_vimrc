@@ -2,8 +2,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " wrote by xye
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nu
-"set cursorline
+" set nu
+set nu rnu
+
+" set cursorline
 "if empty(v:servername) && exists('*remote_startserver')
 "      call remote_startserver('VIM')
 "endif
