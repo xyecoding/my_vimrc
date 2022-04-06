@@ -94,4 +94,4 @@ colorscheme peaksea
 
 
 
-" autocmd BufNewFile  :History
+" autocmd BufNewFile *.vim echo 's'
