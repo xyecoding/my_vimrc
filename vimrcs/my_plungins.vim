@@ -356,9 +356,12 @@ let g:airline#extensions#tabline#tab_nr_type = 2
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#show_tab_type = 1
 " let g:airline#extensions#tabline#buf_label_first = 1
-let tmux_w = system('tmux lsw | grep active')
-let tmux_w = split(split(tmux_w, '\*')[0],':')
-let tmux_w = join([tmux_w[1], tmux_w[0]], '-')
+let tmux_w = 'buffer'
+if exists('$TMUX')
+    let tmux_w = system('tmux lsw | grep active')
+    let tmux_w = split(split(tmux_w, '\*')[0],':')
+    let tmux_w = join([tmux_w[1], tmux_w[0]], '-')
+endif
 let g:airline#extensions#tabline#buffers_label = tmux_w
 let airline#extensions#tabline#current_first = 0
 let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -458,7 +461,7 @@ let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
 autocmd FileType fish compiler fish
 
 " Set this to have long lines wrap inside comments.
-autocmd FileType fish setlocal textwidth=79
+autocmd FileType fish setlocal textwidth=80
 
 " Enable folding of block structures in fish.
-autocmd FileType fish setlocal foldmethod=expr
+" autocmd FileType fish setlocal foldmethod=expr
