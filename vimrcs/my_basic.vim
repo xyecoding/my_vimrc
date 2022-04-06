@@ -91,3 +91,7 @@ colorscheme peaksea
 "     autocmd!
 "     autocmd! CursorHold,CursorHoldI * call HighlightWordUnderCursor()
 " augroup END
+
+
+
+" autocmd BufNewFile  :History
