@@ -26,6 +26,12 @@ inoremap   <A-.>   <ESC>:bn<CR>
 nnoremap    <A-.>   :bn<CR>
 autocmd BufNewFile,BufRead *.tex,*.md  set spell
 
+""""""""""""""""""""""""""""""""""""
+" windows split
+""""""""""""""""""""""""""""""""""""
+noremap \| :vsplit<CR>
+noremap \- :sp<CR>
+
 set termguicolors
 "colorscheme desert
 set whichwrap=<,>,[,]
