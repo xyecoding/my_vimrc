@@ -4,6 +4,7 @@ Plug 'git@github.com:dkarter/bullets.vim.git'
 Plug 'git@github.com:iamcco/markdown-preview.nvim.git', { 'do': 'cd app && yarn install'  }
 Plug 'git@github.com:preservim/nerdcommenter.git'
 
+Plug 'git@github.com:dag/vim-fish.git'
 Plug 'git@github.com:vim-airline/vim-airline-themes.git'
 Plug 'git@github.com:vim-airline/vim-airline.git'
 Plug 'git@github.com:dense-analysis/ale.git'

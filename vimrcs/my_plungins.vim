@@ -107,12 +107,12 @@ let g:tex_flavor='latex'
 
 " This is necessary for VimTeX to load properly. The "indent" is optional.
 " Note that most plugin managers will do this automatically.
-filetype plugin indent on
+" filetype plugin indent on
 
 " This enables Vim's and neovim's syntax-related features. Without this, some
 " VimTeX features will not work (see ":help vimtex-requirements" for more
 " info).
-syntax enable
+" syntax enable
 
 " Viewer options: One may configure the viewer either by specifying a built-in
 " viewer method:
@@ -451,4 +451,14 @@ noremap <leader>bd :BD<CR>
 
 let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
 
+""""""""""""""""""""""""""""""""""""""""""""
+" vim-fish
+""""""""""""""""""""""""""""""""""""""""""""
+" Set up :make to use fish for syntax checking.
+autocmd FileType fish compiler fish
 
+" Set this to have long lines wrap inside comments.
+autocmd FileType fish setlocal textwidth=79
+
+" Enable folding of block structures in fish.
+autocmd FileType fish setlocal foldmethod=expr

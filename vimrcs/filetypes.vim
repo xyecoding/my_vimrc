@@ -72,7 +72,7 @@ endif
 " => Twig section
 """"""""""""""""""""""""""""""
 autocmd BufRead *.twig set syntax=html filetype=html
-autocmd BufRead *.fish set syntax=sh filetype=sh
+" autocmd BufRead *.fish set syntax=sh filetype=sh
 
 
 """"""""""""""""""""""""""""""
