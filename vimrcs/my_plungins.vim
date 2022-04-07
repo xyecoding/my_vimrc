@@ -465,3 +465,5 @@ autocmd FileType fish setlocal textwidth=80
 
 " Enable folding of block structures in fish.
 " autocmd FileType fish setlocal foldmethod=expr
+
+" let g:leetcode_browser='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'

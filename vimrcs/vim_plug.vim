@@ -31,6 +31,7 @@ Plug 'git@github.com:SirVer/ultisnips.git'
 " Plug 'git@github.com:Ron89/thesaurus_query.vim.git'
 " Plug 'git@github.com:vim-scripts/taglist.vim.git'
 
+" Plug 'git@github.com:ianding1/leetcode.vim.git'
 Plug 'git@github.com:preservim/tagbar.git'
 Plug 'git@github.com:mbbill/undotree.git'
 """"""""""""""""""""""""""""""""""""

@@ -6,6 +6,7 @@ set -x PATH /usr/local/luarocks/bin $PATH
 set -x PATH /usr/local/texlive/2021/bin/x86_64-linux $PATH
 
 alias vi nvim
+alias v nvim
 alias vim nvim
 alias rm trash-put
 # shopt -s direxpand
