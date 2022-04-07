@@ -154,4 +154,11 @@ snippet "tb([1-9][1-9])" "Fancy table" br
 `!p snip.rv = match.group(1)`
 endsnippet
 
+snippet sftm "hh:mm" Aw
+From `!v strftime("%H:%M")`
+endsnippet
+
+snippet sdtm "hh:mm" Aw
+Done, `!v strftime("%H:%M")`
+endsnippet
 # vim:ft=snippets:

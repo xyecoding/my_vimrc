@@ -468,7 +468,7 @@ autocmd FileType fish setlocal textwidth=80
 
 " let g:leetcode_browser='/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe'
 
-let g:vimwiki_list = [{'path': '~/mynote/',
-            \ 'syntax': 'markdown', 'ext': '.md', 'auto_toc': 0, 'auto_tags': 0, 'auto_generate_links': 0, 'auto_generate_tags': 0}]
-let g:vimwiki_autowriteall=0
-
+" let g:vimwiki_list = [{'path': '~/mynote/',
+"             \ 'syntax': 'markdown', 'ext': '.md', 'auto_toc': 0, 'auto_tags': 0, 'auto_generate_links': 0, 'auto_generate_tags': 0}]
+" let g:vimwiki_autowriteall=0
+"
