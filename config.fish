@@ -19,10 +19,13 @@ alias cbg 'cd ~/myBlog'
 alias cpp 'cd ~/mypaper/JIFS-OACNN'
 alias csn 'cd ~/.vim_runtime/my_plugins_forked/vim-snippets/UltiSnips'
 alias vvp 'vi ~/.vim_runtime/vimrcs/my_plungins.vim'
+alias vvmp 'vi ~/.vim_runtime/vimrcs/vim_plug.vim'
 alias vvb 'vi ~/.vim_runtime/vimrcs/my_basic.vim'
 # alias vvi 'vi ~/.vim_runtime/install_awesome_vimrc.sh'
 alias vfc 'vi ~/.vim_runtime/config.fish'
 alias cltp 'rm ~/temp_try/*'
+alias wrd 'fish ~/mynote/create_diary.fish'
+alias tnw 'tmux new-window -n'
 
 set -U FZF_FIND_FILE_COMMAND "ag -l --hidden --ignore .git . \$dir 2> /dev/null"
 # bind -M insert \ek 'set fish_bind_mode default'
