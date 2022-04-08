@@ -154,16 +154,24 @@ snippet "tb([1-9][1-9])" "Fancy table" br
 `!p snip.rv = match.group(1)`
 endsnippet
 
-snippet sftm "hh:mm" Aw
+snippet sftm "From time" Aw
 From `!v strftime("%H:%M")`
 endsnippet
 
-snippet sdtm "hh:mm" Aw
+snippet sdtm "Done time" Aw
 Done, `!v strftime("%H:%M")`
 endsnippet
 
-snippet sfdt "YYYY-MM-DD" Aw
+snippet sfdt "From date" Aw
 From `!v strftime("%Y-%m-%d")`
+endsnippet
+
+snippet srst "have a rest from" Aw
+Have a rest from `!v strftime("%Y-%m-%d")`
+endsnippet
+
+snippet sctn "Continue from" Aw
+Continue from `!v strftime("%Y-%m-%d")`
 endsnippet
 
 snippet color "font color" Aw
