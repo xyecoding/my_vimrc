@@ -11,4 +11,5 @@ source ~/.vim_runtime/vimrcs/vim_plug.vim
 source ~/.vim_runtime/vimrcs/my_plungins.vim
 source ~/.vim_runtime/vimrcs/coc.vim
 source ~/.vim_runtime/vimrcs/my_basic.vim
+source ~/.vim_runtime/vimrcs/snippets.vim
 

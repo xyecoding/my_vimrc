@@ -472,3 +472,11 @@ autocmd FileType fish setlocal textwidth=80
 "             \ 'syntax': 'markdown', 'ext': '.md', 'auto_toc': 0, 'auto_tags': 0, 'auto_generate_links': 0, 'auto_generate_tags': 0}]
 " let g:vimwiki_autowriteall=0
 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_math = 1
+" let g:vim_markdown_conceal = 1
+set conceallevel=2
+" let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_folding_level = 1

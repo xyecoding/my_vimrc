@@ -165,11 +165,3 @@ au FileType tex,markdown let g:AutoPairs['$']='$'
 " let g:AutoPairsFlyMode = 1
 " let g:AutoPairsShortcutBackInsert = '<M-b>'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-markdown
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vim_markdown_math = 1
-" let g:vim_markdown_conceal = 1
-set conceallevel=2
-" let g:vim_markdown_conceal_code_blocks = 0
-let g:vim_markdown_folding_level = 1

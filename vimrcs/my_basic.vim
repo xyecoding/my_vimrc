@@ -95,7 +95,7 @@ colorscheme peaksea
 
 
 " autocmd BufNewFile *.vim echo 's'
-autocmd BufNewFile *.vim :History
+" autocmd BufNewFile *.vim :History
 
 " tnoremap <A-h> <C-\><C-N><C-w>h
 " tnoremap <A-j> <C-\><C-N><C-w>j
