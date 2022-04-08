@@ -24,8 +24,9 @@ alias vvb 'vi ~/.vim_runtime/vimrcs/my_basic.vim'
 # alias vvi 'vi ~/.vim_runtime/install_awesome_vimrc.sh'
 alias vfc 'vi ~/.vim_runtime/config.fish'
 alias cltp 'rm ~/temp_try/*'
-alias wrd 'fish ~/mynote/create_diary.fish'
+alias wda 'fish ~/mynote/create_diary.fish'
 alias tnw 'tmux new-window -n'
+alias bk '~/.vim_runtime/fish_scripts/backup_files.fish'
 
 set -U FZF_FIND_FILE_COMMAND "ag -l --hidden --ignore .git . \$dir 2> /dev/null"
 # bind -M insert \ek 'set fish_bind_mode default'
