@@ -25,6 +25,7 @@ alias vvb 'vi ~/.vim_runtime/vimrcs/my_basic.vim'
 alias vfc 'vi ~/.vim_runtime/config.fish'
 alias cltp 'rm ~/temp_try/*'
 alias wda 'fish ~/mynote/create_diary.fish'
+alias cda 'cd ~/mynote'
 alias tnw 'tmux new-window -n'
 alias bk '~/.vim_runtime/fish_scripts/backup_files.fish'
 

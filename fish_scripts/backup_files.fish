@@ -1,5 +1,19 @@
 #!/bin/fish
-set sp_name (string split . $argv[1])
-set backup_name $sp_name[1]_$(date "+%Y%m%d-%H%M%S").$sp_name[-1]
+set suffix (string split -r -m 1 . $argv[1])
+set path_name $suffix[1]
+set suffix $suffix[-1]
+
+set path_name (string split -r -m 1 / $path_name)
+set path $path_name[1]
+set name $path_name[-1]
+
+set dir_path $path/bk
+set backup_name $dir_path/$name\_$(date "+%Y%m%d-%H%M%S").$suffix
+
+# echo $dir_path $backup_name
+
+if not test -e $dir_path
+    mkdir $dir_path
+end
 cp -r $argv[1] $backup_name
 echo $backup_name
