@@ -78,7 +78,7 @@ let g:mkdp_preview_options = {
 
 " use a custom markdown style must be absolute path
 " like '/Users/username/markdown.css' or expand('~/markdown.css')
-" let g:mkdp_markdown_css = expand('~/.vim_runtime/vimrcs/latex.cs')
+" let g:mkdp_markdown_css = expand('~/.vim_runtime/vimrcs/latex.css')
 
 " use a custom highlight style must absolute path
 " like '/Users/username/highlight.css' or expand('~/highlight.css')
@@ -495,3 +495,7 @@ au FileType tex let g:AutoPairs={'(':')', '[':']', '{':'}', '$':'$'}
 " vim-surround
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType markdown let b:surround_100 = "~~\r~~"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" wildfire
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:wildfire_objects = ["i'", 'i"', 'i>', 'a>',"i)", "i]", "i}", "ip", "it"]
