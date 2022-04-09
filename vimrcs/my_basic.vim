@@ -68,7 +68,7 @@ colorscheme peaksea
 " inoremap jk <esc>
 " let g:python3_host_prog='/home/yexiang/anaconda3/bin/python'
 
-
+nnoremap ,r :reg<CR>
 
 """"""""""""""""""""""""""""""""""""
 " highlight the words the same as the word cursor hold

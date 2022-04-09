@@ -156,14 +156,4 @@ xnoremap <leader>v :'<'>GBrowse!<CR>
 
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" auto-pairs
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
-let g:AutoPairs['<']='>'
-au FileType markdown let g:AutoPairs['$']='$'
-
-au FileType tex let g:AutoPairs={'(':')', '[':']', '{':'}', '$':'$'}
-" let g:AutoPairsFlyMode = 1
-" let g:AutoPairsShortcutBackInsert = '<M-b>'
 

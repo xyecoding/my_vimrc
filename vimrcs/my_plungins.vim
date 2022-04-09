@@ -480,3 +480,18 @@ let g:vim_markdown_math = 1
 set conceallevel=2
 " let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_folding_level = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" auto-pairs
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''", '<':'>'}
+au FileType markdown let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''", '<':'>', '$': '$', '~~':'~~'}
+
+au FileType tex let g:AutoPairs={'(':')', '[':']', '{':'}', '$':'$'}
+" let g:AutoPairsFlyMode = 1
+" let g:AutoPairsShortcutBackInsert = '<M-b>'
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-surround
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType markdown let b:surround_100 = "~~\r~~"

@@ -33,6 +33,8 @@ Plug 'git@github.com:SirVer/ultisnips.git'
 
 " Plug 'git@github.com:vimwiki/vimwiki.git'
 
+Plug 'git@github.com:gcmt/wildfire.vim.git'
+Plug 'git@github.com:tpope/vim-surround.git'
 " Plug 'git@github.com:ianding1/leetcode.vim.git'
 Plug 'git@github.com:preservim/tagbar.git'
 Plug 'git@github.com:mbbill/undotree.git'
