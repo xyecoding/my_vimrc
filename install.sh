@@ -5,7 +5,8 @@ mkdir temp_try
 bash ./shs/anaconda.sh
 bash ./shs/fzf.sh
 bash ./shs/fish.sh
-bash ./shs/node.sh
+# bash ./shs/node.sh
+bash ./shs/fnm.sh
 bash ./shs/myblog.sh
 bash ./shs/nvim.sh
 bash ./shs/neoformat.sh
