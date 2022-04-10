@@ -78,11 +78,12 @@ let g:mkdp_preview_options = {
 
 " use a custom markdown style must be absolute path
 " like '/Users/username/markdown.css' or expand('~/markdown.css')
+let g:mkdp_markdown_css = expand('~/.vim_runtime/vimrcs/markdown.css')
 " let g:mkdp_markdown_css = expand('~/.vim_runtime/vimrcs/latex.css')
 
 " use a custom highlight style must absolute path
 " like '/Users/username/highlight.css' or expand('~/highlight.css')
-"let g:mkdp_highlight_css = expand('~/.vim_runtime/my_plugins/markdown-preview.nvim/latex.css')
+" let g:mkdp_highlight_css = expand('~/.vim_runtime/my_plugins/markdown-preview.nvim/latex.css')
 
 " use a custom port to start server or random for empty
 let g:mkdp_port = ''
