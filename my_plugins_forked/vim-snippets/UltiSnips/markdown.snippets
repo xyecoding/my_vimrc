@@ -155,23 +155,35 @@ snippet "tb([1-9][1-9])" "Fancy table" br
 endsnippet
 
 snippet sftm "From time" Aw
-From `!v strftime("%H:%M")`
+[FROM `!v strftime("%H:%M")`]
 endsnippet
 
 snippet sdtm "Done time" Aw
-Done, `!v strftime("%H:%M")`
+<font color=red>[DONE `!v strftime("%H:%M")`]</font>
+endsnippet
+
+snippet sltt "Done time" Aw
+<font color=blue>[LONG TIME TASK]</font>
 endsnippet
 
 snippet sfdt "From date" Aw
-From `!v strftime("%Y-%m-%d")`
+[FROM `!v strftime("%Y-%m-%d")`]
 endsnippet
 
 snippet srst "have a rest from" Aw
-Have a rest from `!v strftime("%H:%M")`
+<font color=green>[REST `!v strftime("%H:%M")`]</font>
+endsnippet
+
+snippet sdl "Deadline" Aw
+<font color=red>[DEADLINE $1]</font> $0
+endsnippet
+
+snippet sltm "have a rest from" Aw
+<font color=green>[LEAVE `!v strftime("%H:%M")`]</font>
 endsnippet
 
 snippet sctn "Continue from" Aw
-Continue from `!v strftime("%H:%M")`
+[CONTINUE `!v strftime("%H:%M")`]
 endsnippet
 
 snippet scolor "font color" Aw

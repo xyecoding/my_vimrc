@@ -58,7 +58,7 @@ vnoremap <Down> <Nop>
 vnoremap <Left> <Nop>
 vnoremap <Right> <Nop>
 " nnoremap <tab> i<CR><Esc>
-nnoremap ss :j2<CR>
+" nnoremap ss :j2<CR>
 nnoremap \d :bd<CR>
 inoremap <C-L> <Right>
 inoremap <C-j> <CR><Left>
