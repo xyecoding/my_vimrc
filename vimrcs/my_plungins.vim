@@ -499,4 +499,5 @@ autocmd FileType markdown let b:surround_100 = "~~\r~~"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " wildfire
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:wildfire_objects = ["i'", 'i"', 'i>', 'a>',"i)", "i]", "i}", "ip", "it"]
+let g:wildfire_objects = ["i'", 'i"', "i>", "a>","i)", "i]", "i}", "ip", "it"]
+au FileType tex let g:wildfire_objects = ["i'", "i$", "a$", 'i"', "i>", "a>","i)", "i]", "i}", "ip", "it"]

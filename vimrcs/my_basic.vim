@@ -20,6 +20,8 @@ inoremap   <C-A>   <ESC>:q<CR>
 nnoremap    <C-A>   :q<CR>
 nnoremap    <C-E>   :e<Space>
 
+inoremap <A-l>  <Nop>
+inoremap <C-Space>  <Nop>
 inoremap   <A-,>   <ESC>:bp<CR>
 nnoremap    <A-,>   :bp<CR>
 inoremap   <A-.>   <ESC>:bn<CR>
