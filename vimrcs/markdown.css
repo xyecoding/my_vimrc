@@ -311,28 +311,34 @@
   padding: 0;
 }
 
-s,
-st {
-  text-decoration: none;
-  /*we're replacing the default line-through*/
-  position: relative;
-  display: inline-block;
-  /* keeps it from wrapping across multiple lines */
+/* s, */
+/* st { */
+/*   text-decoration: none; */
+/*   [>we're replacing the default line-through<] */
+/*   position: relative; */
+/*   display: inline-block; */
+/*   [> keeps it from wrapping across multiple lines <] */
+/* } */
+/* s:after, */
+/* st:after { */
+/*   content: ""; */
+/*   [> required property <] */
+/*   position: absolute; */
+/*   bottom: 0; */
+/*   left: 0; */
+/*   border-top: 2px solid red; */
+/*   [> height: 45%; <] */
+/*   [> adjust as necessary, depending on line thickness <] */
+/*   [> or use calc() if you don't need to support IE8: <] */
+/*   [> height: calc(50% - 1px); <] */
+/*   [> height: 40%; <] */
+/*   [> 1px = half the line thickness <] */
+/*   width: 100%; */
+/*   [> transform: rotateZ(-4deg); <] */
+/* } */
+s {
+  color: red;
 }
-s:after,
-st:after {
-  content: "";
-  /* required property */
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border-top: 2px solid red;
-  /* height: 45%; */
-  /* adjust as necessary, depending on line thickness */
-  /* or use calc() if you don't need to support IE8: */
-  /* height: calc(50% - 1px); */
-  height: 40%;
-  /* 1px = half the line thickness */
-  width: 100%;
-  /* transform: rotateZ(-4deg); */
+s span {
+  color: black;
 }
