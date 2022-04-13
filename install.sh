@@ -3,10 +3,12 @@ set -e
 mkdir temp_try
 
 bash ./shs/anaconda.sh
+~/anaconda3/bin/conda init fish
 bash ./shs/fzf.sh
 bash ./shs/fish.sh
 # bash ./shs/node.sh
-bash ./shs/fnm.sh
+fish ./shs/fnm.sh
+source ~/.config/fish/conf.d/fnm.fish
 bash ./shs/myblog.sh
 bash ./shs/nvim.sh
 bash ./shs/neoformat.sh

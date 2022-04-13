@@ -9,7 +9,7 @@
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
 " default: 1
-let g:mkdp_auto_close = 1
+let g:mkdp_auto_close = 0
 
 " set to 1, the vim will refresh markdown when save the buffer or
 " leave from insert mode, default 0 is auto refresh markdown as you edit or
@@ -499,5 +499,5 @@ autocmd FileType markdown let b:surround_100 = "~~\r~~"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " wildfire
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:wildfire_objects = ["i'", 'i"', "i>", "a>","i)", "i]", "i}", "ip", "it"]
-au FileType tex let g:wildfire_objects = ["i'", "i$", "a$", 'i"', "i>", "a>","i)", "i]", "i}", "ip", "it"]
+" let g:wildfire_objects = ["i'", 'i"', "i>", "a>","i)", "i]", "i}", "ip", "it"]
+" au FileType tex let g:wildfire_objects = ["i'", "i$", "a$", 'i"', "i>", "a>","i)", "i]", "i}", "ip", "it"]
