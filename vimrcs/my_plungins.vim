@@ -141,20 +141,20 @@ let g:vimtex_view_general_options
 " following line. The default is usually fine and is the symbol "\".
 " let maplocalleader = ","
 
-let g:vimtex_quickfix_ignore_filters = [
-            \ 'Warning',
-            \ 'warning',
-            \ 'badness',
-            \ 'Overfull',
-            \]
+" let g:vimtex_quickfix_ignore_filters = [
+"             \ 'Warning',
+"             \ 'warning',
+"             \ 'badness',
+"             \ 'Overfull',
+"             \]
 let g:vimtex_quickfix_mode = 0
-augroup VimTeX
-    autocmd!
-    autocmd BufWritePost *.tex call vimtex#toc#refresh()
-augroup END
-
-" autocmd BufWrite *.tex :VimtexView
-autocmd BufWrite *.tex :call vimtex#toc#refresh()
+" augroup VimTeX
+"     autocmd!
+"     autocmd BufWritePost *.tex call vimtex#toc#refresh()
+" augroup END
+"
+" " autocmd BufWrite *.tex :VimtexView
+" autocmd BufWrite *.tex :call vimtex#toc#refresh()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "supertab
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
